@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mouse Hover</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #222;
+        overflow: hidden;
+      }
+      h2 {
+        position: absolute;
+        font-size: 2em;
+        user-select: none;
+        pointer-events: none;
+        /* opacity: 0; */
+        animation: animate 15s linear infinite;
+      }
+      h2::before {
+        content: '';
+        display: block;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+      }
+      span {
+        position: absolute;
+        text-transform: uppercase;
+        transform-origin: 0 120px;
+        top: -120px;
+        font-weight: 400;
+      }
+      body:hover h2 {
+        opacity: 1;
+      }
+      @keyframes animate {
+        0% {
+          color: hsl(0, 100%, 50%);
+          text-shadow: 0 0 10px hsl(0, 100%, 50%), 0 0 20px hsl(0, 100%, 50%);
+        }
+        4% {
+          color: hsl(30, 100%, 50%);
+          text-shadow: 0 0 10px hsl(30, 100%, 50%), 0 0 20px hsl(30, 100%, 50%);
+        }
+        8% {
+          color: hsl(60, 100%, 50%);
+          text-shadow: 0 0 10px hsl(60, 100%, 50%), 0 0 20px hsl(60, 100%, 50%);
+        }
+        12% {
+          color: hsl(90, 100%, 50%);
+          text-shadow: 0 0 10px hsl(90, 100%, 50%), 0 0 20px hsl(90, 100%, 50%);
+        }
+        16% {
+          color: hsl(120, 100%, 50%);
+          text-shadow: 0 0 10px hsl(120, 100%, 50%), 0 0 20px hsl(120, 100%, 50%);
+        }
+        20% {
+          color: hsl(150, 100%, 50%);
+          text-shadow: 0 0 10px hsl(150, 100%, 50%), 0 0 20px hsl(150, 100%, 50%);
+        }
+        24% {
+          color: hsl(180, 100%, 50%);
+          text-shadow: 0 0 10px hsl(180, 100%, 50%), 0 0 20px hsl(180, 100%, 50%);
+        }
+        28% {
+          color: hsl(210, 100%, 50%);
+          text-shadow: 0 0 10px hsl(210, 100%, 50%), 0 0 20px hsl(210, 100%, 50%);
+        }
+        32% {
+          color: hsl(240, 100%, 50%);
+          text-shadow: 0 0 10px hsl(240, 100%, 50%), 0 0 20px hsl(240, 100%, 50%);
+        }
+        36% {
+          color: hsl(270, 100%, 50%);
+          text-shadow: 0 0 10px hsl(270, 100%, 50%), 0 0 20px hsl(270, 100%, 50%);
+        }
+        40% {
+          color: hsl(300, 100%, 50%);
+          text-shadow: 0 0 10px hsl(300, 100%, 50%), 0 0 20px hsl(300, 100%, 50%);
+        }
+        44% {
+          color: hsl(330, 100%, 50%);
+          text-shadow: 0 0 10px hsl(330, 100%, 50%), 0 0 20px hsl(330, 100%, 50%);
+        }
+        48% {
+          color: hsl(360, 100%, 50%);
+          text-shadow: 0 0 10px hsl(360, 100%, 50%), 0 0 20px hsl(360, 100%, 50%);
+        }
+        52% {
+          color: hsl(330, 100%, 50%);
+          text-shadow: 0 0 10px hsl(330, 100%, 50%), 0 0 20px hsl(330, 100%, 50%);
+        }
+        56% {
+          color: hsl(300, 100%, 50%);
+          text-shadow: 0 0 10px hsl(300, 100%, 50%), 0 0 20px hsl(300, 100%, 50%);
+        }
+        60% {
+          color: hsl(270, 100%, 50%);
+          text-shadow: 0 0 10px hsl(270, 100%, 50%), 0 0 20px hsl(270, 100%, 50%);
+        }
+        64% {
+          color: hsl(240, 100%, 50%);
+          text-shadow: 0 0 10px hsl(240, 100%, 50%), 0 0 20px hsl(240, 100%, 50%);
+        }
+        68% {
+          color: hsl(210, 100%, 50%);
+          text-shadow: 0 0 10px hsl(210, 100%, 50%), 0 0 20px hsl(210, 100%, 50%);
+        }
+        72% {
+          color: hsl(180, 100%, 50%);
+          text-shadow: 0 0 10px hsl(180, 100%, 50%), 0 0 20px hsl(180, 100%, 50%);
+        }
+        76% {
+          color: hsl(150, 100%, 50%);
+          text-shadow: 0 0 10px hsl(150, 100%, 50%), 0 0 20px hsl(150, 100%, 50%);
+        }
+        80% {
+          color: hsl(120, 100%, 50%);
+          text-shadow: 0 0 10px hsl(120, 100%, 50%), 0 0 20px hsl(120, 100%, 50%);
+        }
+        84% {
+          color: hsl(90, 100%, 50%);
+          text-shadow: 0 0 10px hsl(90, 100%, 50%), 0 0 20px hsl(90, 100%, 50%);
+        }
+        88% {
+          color: hsl(60, 100%, 50%);
+          text-shadow: 0 0 10px hsl(60, 100%, 50%), 0 0 20px hsl(60, 100%, 50%);
+        }
+        92% {
+          color: hsl(30, 100%, 50%);
+          text-shadow: 0 0 10px hsl(30, 100%, 50%), 0 0 20px hsl(30, 100%, 50%);
+        }
+        96% {
+          color: hsl(0, 100%, 50%);
+          text-shadow: 0 0 10px hsl(0, 100%, 50%), 0 0 20px hsl(0, 100%, 50%);
+        }
+        100% {
+          color: hsl(0, 100%, 50%);
+          text-shadow: 0 0 10px hsl(0, 100%, 50%), 0 0 20px hsl(0, 100%, 50%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Hover text effect</h2>
+    <script>
+      const body = document.querySelector('body');
+      const h2 = document.querySelector('h2');
+
+      document.addEventListener('mousemove', function (e) {
+        h2.style.left = e.pageX + 'px';
+        h2.style.top = e.pageY + 'px';
+        h2.style.transform = `rotate(${e.pageX / 2}deg) rotate(${e.pageY / -2}deg)`;
+      });
+
+      const textContent = h2.textContent;
+      const textLength = textContent.length;
+
+      h2.innerHTML = textContent.replace(/./g, '<span>$&</span>');
+      let spanListEl = document.querySelectorAll('span');
+      for (let i = 0; i < spanListEl.length; i++) {
+        spanListEl[i].style.transform = 'rotate(' + i * 20 + 'deg)';
+      }
+    </script>
+  </body>
+</html>

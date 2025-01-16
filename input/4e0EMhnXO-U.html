@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Typing</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #07d1ff;
+        overflow-x: hidden;
+      }
+      h1 {
+        margin: 0 50px;
+        color: #fff;
+        font-size: 140px;
+        line-height: 1.1;
+        text-align: center;
+        outline: none;
+        user-select: none;
+        transform: rotate(-8deg) skewX(15deg);
+        text-shadow: -2px 2px #b3b3b3, -4px 4px #b3b3b3, -6px 6px #b3b3b3, -8px 8px #b3b3b3,
+          -10px 10px #b3b3b3, -12px 12px #b3b3b3, -14px 14px #b3b3b3, -16px 16px #b3b3b3,
+          -30px 30px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <h1 contenteditable="true">Typo Here</h1>
+  </body>
+</html>

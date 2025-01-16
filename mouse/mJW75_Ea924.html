@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mouse Click</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #222;
+        overflow: hidden;
+      }
+      h2 {
+        color: #444;
+        font-size: 5em;
+        user-select: none;
+      }
+      i {
+        position: absolute;
+        border-radius: 50%;
+        background-color: white;
+      }
+
+      @keyframes animate {
+        0% {
+          opacity: 1;
+          transform: translate(0, 0);
+        }
+        100% {
+          opacity: 0;
+          transform: translate(var(--rdX), var(--rdY));
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Click to see effect</h2>
+    <script>
+      const body = document.querySelector('body');
+      const h2 = document.querySelector('h2');
+
+      body.addEventListener('click', (e) => {
+        // e.clientX, e.clientY: click offset
+        // window.innerWidth, window.innerHeight: window screen width / height
+        const colors = ['#f4934c', '#fff', '#ffeb3b', '#93a9f4', '#1e526e'];
+        const sparkNumber = 12;
+
+        for (let i = 0; i < sparkNumber; i++) {
+          const spark = document.createElement('i');
+
+          // set postion
+          spark.style.top = e.clientY + 'px';
+          spark.style.left = e.clientX + 'px';
+
+          const rdX = (Math.random() - 0.5) * window.innerWidth;
+          const rdY = (Math.random() - 0.5) * window.innerHeight;
+          const rdSize = (Math.random() - 0.5) * 30 + 20;
+          const rdDuration = (Math.random() - 0.5) * 2 + 1.5;
+
+          spark.style.setProperty('--rdX', rdX + 'px');
+          spark.style.setProperty('--rdY', rdY + 'px');
+          spark.style.width = rdSize + 'px';
+          spark.style.height = rdSize + 'px';
+          spark.style.animation = `animate ${rdDuration}s ease-out forwards`;
+
+          let randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+          spark.style.backgroundColor = randomColor;
+          if (i === sparkNumber - 1) h2.style.color = randomColor;
+
+          body.appendChild(spark);
+
+          // if (i === 0) {
+          // console.log(rdX, rdY);
+          // console.log(e.clientX, e.clientY);
+          // console.log(rdSize, rdDuration);
+          // }
+
+          setTimeout(() => {
+            spark.remove();
+          }, 2000);
+        }
+      });
+    </script>
+  </body>
+</html>

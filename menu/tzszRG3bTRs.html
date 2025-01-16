@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vetical Menu</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        font-family: 'Poppins', sans-serif;
+        background: #333;
+        transition: 0.5s;
+      }
+      .navigation {
+        position: relative;
+        width: 70px;
+        height: 350px;
+        background: #fff;
+        border-radius: 35px;
+        box-shadow: 0 15 25 rgba(0, 0, 0, 0.1);
+      }
+      ul {
+        list-style: none;
+        position: absolute;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      li {
+        position: relative;
+        z-index: 2;
+      }
+      a {
+        position: relative;
+        width: 70px;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #333;
+        font-weight: 500;
+      }
+      i {
+        font-size: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      li.active i {
+        color: #fff;
+      }
+      .title {
+        position: absolute;
+        top: 25%;
+        left: 110px;
+        background: #fff;
+        padding: 5px 10px;
+        border-radius: 6px;
+        pointer-events: none;
+        user-select: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.5s;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      .title::before {
+        content: '';
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background-color: #fff;
+        top: 34%;
+        left: -5px;
+        transform: rotate(45deg);
+      }
+      li:hover .title {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-25px);
+      }
+      .indicator {
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        transition: 0.5s;
+      }
+      .indicator::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #333;
+        width: 50px;
+        height: 50px;
+        transition: 0.5s;
+        border-radius: 50%;
+      }
+      li:nth-child(1).active ~ .indicator {
+        transform: translateY(0);
+      }
+      li:nth-child(2).active ~ .indicator {
+        transform: translateY(70px);
+      }
+      li:nth-child(3).active ~ .indicator {
+        transform: translateY(137px);
+      }
+      li:nth-child(4).active ~ .indicator {
+        transform: translateY(208px);
+      }
+      li:nth-child(5).active ~ .indicator {
+        transform: translateY(277px);
+      }
+      li:nth-child(1).active ~ .indicator::after {
+        background-color: #f53b57;
+      }
+      li:nth-child(2).active ~ .indicator::after {
+        background-color: #f3c40c;
+      }
+      li:nth-child(3).active ~ .indicator::after {
+        background-color: #05c46b;
+      }
+      li:nth-child(4).active ~ .indicator::after {
+        background-color: #f3c40c;
+      }
+      li:nth-child(5).active ~ .indicator::after {
+        background-color: #0fbcf9;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navigation">
+      <ul>
+        <li class="active">
+          <a href="#">
+            <span class="icon">
+              <i class="fa-solid fa-house"></i>
+            </span>
+            <span class="title" data-text="Home">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="icon">
+              <i class="fa-solid fa-user"></i>
+            </span>
+            <span class="title" data-text="Profile">Profile</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="icon">
+              <i class="fa-solid fa-message"></i>
+            </span>
+            <span class="title" data-text="Profile">Message</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="icon">
+              <i class="fa-solid fa-circle-question"></i>
+            </span>
+            <span class="title" data-text="Help">Help</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="icon">
+              <i class="fa-solid fa-gear"></i>
+            </span>
+            <span class="title" data-text="Setting">Setting</span>
+          </a>
+        </li>
+        <div class="indicator"></div>
+      </ul>
+    </div>
+    <script>
+      const list = document.querySelectorAll('li');
+      const indicator = document.querySelector('.indicator');
+
+      function activeLink() {
+        list.forEach((item) => {
+          item.classList.remove('active');
+        });
+        this.classList.add('active');
+      }
+      list.forEach((item) => {
+        item.addEventListener('mouseenter', activeLink);
+      });
+    </script>
+  </body>
+</html>

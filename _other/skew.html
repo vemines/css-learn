@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkewX and SkewY Examples</title>
+    <style>
+      body {
+        margin-left: 30px;
+      }
+      .skew-example {
+        width: 100px;
+        height: 100px;
+        background-color: lightblue;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        text-align: center;
+        font-size: 12px;
+      }
+
+      .row {
+        display: flex;
+        gap: 50px;
+        margin-bottom: 50px;
+      }
+
+      h2 {
+        margin-bottom: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>SkewX Variations</h2>
+    <div class="row">
+      <div>
+        <div class="skew-example" style="transform: skewX(0deg)">skewX: 0</div>
+      </div>
+      <div>
+        <div class="skew-example" style="transform: skewX(10deg)">skewX: 10</div>
+      </div>
+      <div>
+        <div class="skew-example" style="transform: skewX(20deg)">skewX: 20</div>
+      </div>
+      <div>
+        <div class="skew-example" style="transform: skewX(30deg)">skewX: 30</div>
+      </div>
+      <div>
+        <div class="skew-example" style="transform: skewX(-10deg)">skewX: -10</div>
+      </div>
+      <div>
+        <div class="skew-example" style="transform: skewX(-20deg)">skewX: -20</div>
+      </div>
+    </div>
+
+    <h2>SkewY Variations</h2>
+    <div class="row">
+      <div>
+        <div class="skew-example" style="transform: skewY(0deg)">skewY: 0</div>
+      </div>
+      <div>
+        <div class="skew-example" style="transform: skewY(10deg)">skewY: 10</div>
+      </div>
+      <div>
+        <div class="skew-example" style="transform: skewY(20deg)">skewY: 20</div>
+      </div>
+      <div>
+        <div class="skew-example" style="transform: skewY(30deg)">skewY: 30</div>
+      </div>
+      <div>
+        <div class="skew-example" style="transform: skewY(-10deg)">skewY: -10</div>
+      </div>
+      <div>
+        <div class="skew-example" style="transform: skewY(-20deg)">skewY: -20</div>
+      </div>
+    </div>
+
+    <h2>SkewX and SkewY with Rotation</h2>
+    <div class="row">
+      <!-- Rotate + 15deg -->
+      <div>
+        <div class="skew-example" style="transform: rotate(15deg) skewX(10deg)">
+          rotate: 15<br />skewX: 10
+        </div>
+      </div>
+      <div>
+        <div class="skew-example" style="transform: rotate(15deg) skewX(-10deg)">
+          rotate: 15<br />skewX: -10
+        </div>
+      </div>
+      <div>
+        <div class="skew-example" style="transform: rotate(15deg) skewY(10deg)">
+          rotate: 15<br />skewY: 10
+        </div>
+      </div>
+      <div>
+        <div class="skew-example" style="transform: rotate(15deg) skewY(-10deg)">
+          rotate: 15<br />skewY: -10
+        </div>
+      </div>
+      <div>
+        <div class="skew-example" style="transform: rotate(15deg) skewX(10deg) skewY(10deg)">
+          rotate: 15<br />skewX: 10<br />skewY: 10
+        </div>
+      </div>
+      <div>
+        <div class="skew-example" style="transform: rotate(15deg) skewX(-10deg) skewY(-10deg)">
+          rotate: 15<br />skewX: -10<br />skewY: -10
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <!-- Rotate - 15deg -->
+      <div>
+        <div class="skew-example" style="transform: rotate(-15deg) skewX(10deg)">
+          rotate: -15<br />skewX: 10
+        </div>
+      </div>
+      <div>
+        <div class="skew-example" style="transform: rotate(-15deg) skewX(-10deg)">
+          rotate: -15<br />skewX: -10
+        </div>
+      </div>
+      <div>
+        <div class="skew-example" style="transform: rotate(-15deg) skewY(10deg)">
+          rotate: -15<br />skewY: 10
+        </div>
+      </div>
+      <div>
+        <div class="skew-example" style="transform: rotate(-15deg) skewY(-10deg)">
+          rotate: -15<br />skewY: -10
+        </div>
+      </div>
+      <div>
+        <div class="skew-example" style="transform: rotate(-15deg) skewX(10deg) skewY(10deg)">
+          rotate: -15<br />skewX: 10<br />skewY: 10
+        </div>
+      </div>
+      <div>
+        <div class="skew-example" style="transform: rotate(-15deg) skewX(-10deg) skewY(-10deg)">
+          rotate: -15<br />skewX: -10<br />skewY: -10
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

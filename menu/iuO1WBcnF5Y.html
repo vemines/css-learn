@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Hover</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #121212;
+      }
+      ul {
+        display: flex;
+        list-style: none;
+        gap: 50px;
+      }
+      a {
+        position: relative;
+        text-align: center;
+        margin: 0 10px;
+        text-decoration: none;
+        border-top: 4px solid #6976d4;
+      }
+      span,
+      span:before,
+      span:after {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 140px;
+        height: 50px;
+      }
+      a span {
+        background-color: #f1f1f1;
+        color: #262626;
+        font-family: arial;
+        font-weight: bold;
+        font-size: 1.3em;
+      }
+      span::before {
+        content: attr(data-text);
+        position: absolute;
+        background-color: #ffeb3b;
+        color: #262626;
+
+        transform-origin: top;
+        transform: rotateX(270deg);
+        transition: 0.5s;
+      }
+
+      a:hover span::before {
+        transform: rotateX(0deg);
+      }
+
+      span::after {
+        content: attr(data-text);
+        position: absolute;
+        background-color: #2196f3;
+        color: #fff;
+
+        transform-origin: top;
+        transform: rotateX(270deg);
+        transition: 0.5s;
+      }
+
+      a:hover span::after {
+        transition-delay: 0.3s;
+        transform: rotateX(0deg);
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>
+        <a href="#"><span data-text="Home">Home</span></a>
+      </li>
+      <li>
+        <a href="#"><span data-text="About">About</span></a>
+      </li>
+      <li>
+        <a href="#"><span data-text="5ervices">Services</span></a>
+      </li>
+      <li>
+        <a href="#"><span data-text="Portfolio">Portfolio</span></a>
+      </li>
+      <li>
+        <a href="#"><span data-text="Contact">Contact</span></a>
+      </li>
+    </ul>
+  </body>
+</html>

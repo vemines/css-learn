@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transform Origin Rotations</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        font-family: Arial, sans-serif;
+      }
+
+      .row {
+        display: flex;
+        gap: 50px;
+      }
+
+      .container {
+        text-align: center;
+      }
+
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: #3498db;
+        margin: 10px auto;
+        transition: background-color 0.5s;
+      }
+
+      .box:hover {
+        background-color: #e74c3c;
+      }
+
+      .container:hover .rotateX {
+        transform: rotateX(360deg);
+        transition: transform 1.5s;
+      }
+
+      .container:hover .rotateY {
+        transform: rotateY(360deg);
+        transition: transform 1.5s;
+      }
+
+      .container:hover .rotateX.rotateY {
+        transform: rotateX(360deg) rotateY(360deg);
+        transition: transform 1.5s;
+      }
+
+      .info {
+        margin-top: 20px;
+      }
+
+      h2 {
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>transform-origin: top</h2>
+    <div class="row">
+      <div class="container">
+        <div class="box rotateX" style="transform-origin: top"></div>
+        <div class="info">x</div>
+      </div>
+      <div class="container">
+        <div class="box rotateY" style="transform-origin: top"></div>
+        <div class="info">y</div>
+      </div>
+      <div class="container">
+        <div class="box rotateX rotateY" style="transform-origin: top"></div>
+        <div class="info">x, y</div>
+      </div>
+    </div>
+
+    <h2>transform-origin: center</h2>
+    <div class="row">
+      <div class="container">
+        <div class="box rotateX" style="transform-origin: center"></div>
+        <div class="info">x</div>
+      </div>
+      <div class="container">
+        <div class="box rotateY" style="transform-origin: center"></div>
+        <div class="info">y</div>
+      </div>
+      <div class="container">
+        <div class="box rotateX rotateY" style="transform-origin: center"></div>
+        <div class="info">x, y</div>
+      </div>
+    </div>
+
+    <h2>transform-origin: bottom</h2>
+    <div class="row">
+      <div class="container">
+        <div class="box rotateX" style="transform-origin: bottom"></div>
+        <div class="info">x</div>
+      </div>
+      <div class="container">
+        <div class="box rotateY" style="transform-origin: bottom"></div>
+        <div class="info">y</div>
+      </div>
+      <div class="container">
+        <div class="box rotateX rotateY" style="transform-origin: bottom"></div>
+        <div class="info">x, y</div>
+      </div>
+    </div>
+
+    <h2>transform-origin: left</h2>
+    <div class="row">
+      <div class="container">
+        <div class="box rotateX" style="transform-origin: left"></div>
+        <div class="info">x</div>
+      </div>
+      <div class="container">
+        <div class="box rotateY" style="transform-origin: left"></div>
+        <div class="info">y</div>
+      </div>
+      <div class="container">
+        <div class="box rotateX rotateY" style="transform-origin: left"></div>
+        <div class="info">x, y</div>
+      </div>
+    </div>
+
+    <h2>transform-origin: right</h2>
+    <div class="row">
+      <div class="container">
+        <div class="box rotateX" style="transform-origin: right"></div>
+        <div class="info">x</div>
+      </div>
+      <div class="container">
+        <div class="box rotateY" style="transform-origin: right"></div>
+        <div class="info">y</div>
+      </div>
+      <div class="container">
+        <div class="box rotateX rotateY" style="transform-origin: right"></div>
+        <div class="info">x, y</div>
+      </div>
+    </div>
+
+    <h2>transform-origin: 75% 75%</h2>
+    <div class="row">
+      <div class="container">
+        <div class="box rotateX" style="transform-origin: 75% 75%"></div>
+        <div class="info">x</div>
+      </div>
+      <div class="container">
+        <div class="box rotateY" style="transform-origin: 75% 75%"></div>
+        <div class="info">y</div>
+      </div>
+      <div class="container">
+        <div class="box rotateX rotateY" style="transform-origin: 75% 75%"></div>
+        <div class="info">x, y</div>
+      </div>
+    </div>
+
+    <h2>transform-origin: 25% 25%</h2>
+    <div class="row">
+      <div class="container">
+        <div class="box rotateX" style="transform-origin: 25% 25%"></div>
+        <div class="info">x</div>
+      </div>
+      <div class="container">
+        <div class="box rotateY" style="transform-origin: 25% 25%"></div>
+        <div class="info">y</div>
+      </div>
+      <div class="container">
+        <div class="box rotateX rotateY" style="transform-origin: 25% 25%"></div>
+        <div class="info">x, y</div>
+      </div>
+    </div>
+  </body>
+</html>
