@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inset Examples</title>
+    <style>
+      .container {
+        display: flex;
+        gap: 20px;
+        border: 2px solid #333;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      .inset-box {
+        width: 200px;
+        height: 200px;
+        background-color: lightblue;
+        border: 1px solid #888;
+        position: relative; /* Required for absolute positioning of inset content */
+      }
+
+      .inset-content {
+        position: absolute; /* Positioned relative to the inset-box */
+        background-color: rgba(255, 255, 0, 0.7); /* Semi-transparent yellow */
+        border: 1px solid orange;
+        padding: 5px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      /* Different Inset Examples */
+      .inset-top-right .inset-content {
+        inset: 10px 10px auto auto;
+      } /* top right corner*/
+      .inset-top-left .inset-content {
+        inset: 10px auto auto 10px;
+      } /* top left corner*/
+      .inset-bottom-right .inset-content {
+        inset: auto 10px 10px auto;
+      } /* bottom right corner*/
+      .inset-bottom-left .inset-content {
+        inset: auto auto 10px 10px;
+      } /* bottom left corner*/
+      .inset-all-10 .inset-content {
+        inset: 10px;
+      } /* All sides 10px */
+      .inset-horizontal-20-vertical-10 .inset-content {
+        inset: 10px 20px;
+      } /* Vertical 10, horizontal 20 */
+      .inset-top-20-horizontal-10-bottom-5 .inset-content {
+        inset: 20px 10px 5px;
+      } /* top 20, horizontal 10, bottom 5px*/
+      .inset-top-10-right-20-bottom-5-left-15 .inset-content {
+        inset: 10px 20px 5px 15px;
+      } /* all sides */
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="inset-box inset-top-right">
+        <div class="inset-content">Top-Right</div>
+      </div>
+
+      <div class="inset-box inset-top-left">
+        <div class="inset-content">Top-Left</div>
+      </div>
+
+      <div class="inset-box inset-bottom-right">
+        <div class="inset-content">Bottom-Right</div>
+      </div>
+
+      <div class="inset-box inset-bottom-left">
+        <div class="inset-content">Bottom-Left</div>
+      </div>
+
+      <div class="inset-box inset-all-10">
+        <div class="inset-content">All 10px</div>
+      </div>
+
+      <div class="inset-box inset-horizontal-20-vertical-10">
+        <div class="inset-content">10px vert, 20px horiz</div>
+      </div>
+      <div class="inset-box inset-top-20-horizontal-10-bottom-5">
+        <div class="inset-content">top 20, horz 10, bottom 5</div>
+      </div>
+      <div class="inset-box inset-top-10-right-20-bottom-5-left-15">
+        <div class="inset-content">top-10, right-20, bottom-5, left-15</div>
+      </div>
+    </div>
+  </body>
+</html>
