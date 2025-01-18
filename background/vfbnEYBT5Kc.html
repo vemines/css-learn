@@ -1,0 +1,88 @@
+<DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Hover</title>
+      <style>
+        * {
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
+        }
+        body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+          background-color: #222;
+        }
+        .container {
+          display: grid;
+          grid-template-columns: repeat(4, 150px);
+          gap: 20px;
+        }
+        .card {
+          position: relative;
+          width: 150px;
+          height: 150px;
+          background: #333;
+          overflow: hidden;
+        }
+        .card::before {
+          content: '';
+          position: absolute;
+          background: radial-gradient(var(--clr), transparent, transparent);
+          width: 300px;
+          height: 300px;
+          top: var(--y);
+          left: var(--x);
+          transform: translate(-50%, -50%);
+          opacity: 0;
+        }
+        .card:hover:before {
+          opacity: 1;
+        }
+        .card::after {
+          content: '';
+          position: absolute;
+          inset: 3px;
+          background-color: #333;
+          transition: 0.5s;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <div class="card" style="--clr: #0f0"></div>
+        <div class="card" style="--clr: #ff0"></div>
+        <div class="card" style="--clr: #f00"></div>
+        <div class="card" style="--clr: #f0f"></div>
+        <div class="card" style="--clr: #0ff"></div>
+        <div class="card" style="--clr: #0f0"></div>
+        <div class="card" style="--clr: #ff0"></div>
+        <div class="card" style="--clr: #f00"></div>
+        <div class="card" style="--clr: #f0f"></div>
+        <div class="card" style="--clr: #0ff"></div>
+        <div class="card" style="--clr: #0f0"></div>
+        <div class="card" style="--clr: #ff0"></div>
+        <div class="card" style="--clr: #f00"></div>
+        <div class="card" style="--clr: #f0f"></div>
+        <div class="card" style="--clr: #0ff"></div>
+        <div class="card" style="--clr: #0f0"></div>
+      </div>
+
+      <script>
+        let cards = document.querySelectorAll('.card');
+        cards.forEach((card) => {
+          card.onmousemove = function (e) {
+            let x = e.pageX - card.offsetLeft;
+            let y = e.pageY - card.offsetTop;
+            card.style.setProperty('--x', x + 'px');
+            card.style.setProperty('--y', y + 'px');
+          };
+        });
+      </script>
+    </body>
+  </html>
+</DOCTYPE>

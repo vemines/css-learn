@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Switch</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 80px;
+        min-height: 100vh;
+        background-color: #363a3b;
+      }
+      .box {
+        position: relative;
+        width: 200px;
+        height: 80px;
+        cursor: pointer;
+        filter: drop-shadow(0 0 10px #7ef0ff);
+      }
+      .box::before {
+        content: '';
+        position: absolute;
+        inset: -4px;
+        border: 1px solid #7ef0ff;
+      }
+      .box span {
+        position: absolute;
+        width: 80px;
+        height: 2px;
+        background-color: #7ef0ff;
+        pointer-events: none;
+        transition: 0.2s ease-in-out;
+      }
+      .box.active span {
+        transform: translateX(120px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <div class="box active"></div>
+
+    <script>
+      let boxes = document.querySelectorAll('.box');
+      boxes.forEach(function (box) {
+        for (let i = 0; i < 40; i++) {
+          let span = document.createElement('span');
+          span.style.top = `${i * 2}px`;
+          span.style.transitionDelay = Math.random() * 0.25 + 's';
+          box.appendChild(span);
+        }
+        box.addEventListener('click', function () {
+          box.classList.toggle('active');
+        });
+      });
+    </script>
+  </body>
+</html>

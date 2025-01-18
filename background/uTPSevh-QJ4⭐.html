@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background Animation</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      ul {
+        list-style: none;
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+      }
+      li {
+        width: 10%;
+        box-shadow: 5px 0 5px rgba(0, 0, 0, 0.2);
+      } /* Initial background colors */
+      li:nth-child(1) {
+        background-color: #d91dc7;
+      }
+      li:nth-child(2) {
+        background-color: #ff00d2;
+      }
+      li:nth-child(3) {
+        background-color: #7f59a8;
+      }
+      li:nth-child(4) {
+        background-color: #309fe5;
+      }
+      li:nth-child(5) {
+        background-color: #63c27d;
+      }
+      li:nth-child(6) {
+        background-color: #30e54e;
+      }
+      li:nth-child(7) {
+        background-color: #a9c10f;
+      }
+      li:nth-child(8) {
+        background-color: #e5e330;
+      }
+      li:nth-child(9) {
+        background-color: #9a79c5;
+      }
+      li:nth-child(10) {
+        background-color: #ac30e5;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+    <script>
+      // Define the colors for animation
+      const colorStages = [
+        '#AC30E5',
+        '#D91DC7',
+        '#FF00D2',
+        '#7F59A8',
+        '#309FE5',
+        '#63C27D',
+        '#30E54E',
+        '#A9C10F',
+        '#E5E330',
+        '#9A79C5',
+        '#AC30E5',
+      ];
+      const items = document.querySelectorAll('li'); // Function to cycle the color stages
+      const cycleIndex = (initialIndex, offset) => {
+        return (initialIndex + offset) % (colorStages.length - 1);
+      };
+      items.forEach((item, index) => {
+        // Define unique keyframes for each li element
+        const animationName = `animateColor${index}`;
+        const keyframes = `
+            @keyframes ${animationName} {
+                0% { background-color: ${colorStages[cycleIndex(index, 0)]}; }
+                10% { background-color: ${colorStages[cycleIndex(index, 1)]}; }
+                20% { background-color: ${colorStages[cycleIndex(index, 2)]}; }
+               30% { background-color: ${colorStages[cycleIndex(index, 3)]}; }
+                40% { background-color: ${colorStages[cycleIndex(index, 4)]}; }
+                50% { background-color: ${colorStages[cycleIndex(index, 5)]}; }
+                60% { background-color: ${colorStages[cycleIndex(index, 6)]}; }
+                70% { background-color: ${colorStages[cycleIndex(index, 7)]}; }
+                80% { background-color: ${colorStages[cycleIndex(index, 8)]}; }
+                90% { background-color: ${colorStages[cycleIndex(index, 9)]}; }
+                100% { background-color: ${colorStages[cycleIndex(index, 10)]}; }
+                
+            }
+          `; // Append the dynamically created keyframes to the head of the document
+        const styleSheet = document.styleSheets[0];
+        styleSheet.insertRule(keyframes, styleSheet.cssRules.length); // Apply the animation to the li element
+        item.style.animation = `${animationName} 5s infinite linear`;
+      });
+    </script>
+  </body>
+</html>
