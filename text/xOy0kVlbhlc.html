@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change font size</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+      }
+      body {
+        display: flex;
+        justify-content: flex-start;
+        min-height: 100vh;
+      }
+      .container {
+        position: relative;
+        margin: 20px auto;
+        padding: 0 20px;
+        width: 1000px;
+      }
+      .buttons {
+        display: flex;
+        gap: 16px;
+        justify-content: flex-end;
+        align-items: end;
+        margin-bottom: 20px;
+      }
+      button {
+        background-color: #ddd;
+        border: none;
+        cursor: pointer;
+        color: #fff;
+      }
+      button.active {
+        background-color: #555;
+      }
+      button:nth-child(1) {
+        font-size: 14px;
+        padding: 10px 16px;
+      }
+      button:nth-child(2) {
+        font-size: 20px;
+        padding: 10px 19px;
+      }
+      button:nth-child(3) {
+        font-size: 28px;
+        padding: 10px 21px;
+      }
+      .content {
+        transition: 0.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="buttons">
+        <button class="active">A</button>
+        <button>A</button>
+        <button>A</button>
+      </div>
+      <div class="content">
+        <h2>Change font size</h2>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore labore, doloremque sed,
+          sint molestiae enim quasi quod consequatur hic quisquam, veritatis magnam harum dolorem
+          consequuntur ad laboriosam odio. Aliquam, necessitatibus?
+        </p>
+      </div>
+    </div>
+
+    <script>
+      const buttons = document.querySelectorAll('button');
+      const sizes = ['16px', '20px', '26px'];
+      buttons.forEach((btn, index) => {
+        btn.addEventListener('click', function () {
+          document.querySelector('.content').style.fontSize = sizes[index];
+          buttons.forEach((el) => el.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+    </script>
+  </body>
+</html>

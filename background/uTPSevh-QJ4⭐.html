@@ -101,12 +101,11 @@
                 80% { background-color: ${colorStages[cycleIndex(index, 8)]}; }
                 90% { background-color: ${colorStages[cycleIndex(index, 9)]}; }
                 100% { background-color: ${colorStages[cycleIndex(index, 10)]}; }
-                
             }
           `; // Append the dynamically created keyframes to the head of the document
         const styleSheet = document.styleSheets[0];
         styleSheet.insertRule(keyframes, styleSheet.cssRules.length); // Apply the animation to the li element
-        item.style.animation = `${animationName} 5s infinite linear`;
+        item.style.animation = `${animationName} 5s infinite linear reverse`;
       });
     </script>
   </body>
