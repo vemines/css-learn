@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yin Yang</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .center {
+        position: absolute;
+        background-color: #000;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) perspective(800px) rotateX(45deg);
+        border-radius: 50%;
+        box-shadow: 0 5px 5px #383838;
+      }
+      .shape {
+        width: 200px;
+        height: 200px;
+        border-bottom: 100px solid #fff;
+        border-radius: 50%;
+        animation: animate 5s linear infinite;
+      }
+      .shape::before {
+        content: '';
+        position: absolute;
+        top: 45%;
+        left: 0%;
+        width: 20px;
+        height: 20px;
+        background: #000;
+        border: 40px solid #fff;
+        border-radius: 50%;
+      }
+      .shape::after {
+        content: '';
+        position: absolute;
+        top: 45%;
+        right: 0%;
+        width: 20px;
+        height: 20px;
+        background: #fff;
+        border: 40px solid #000;
+        border-radius: 50%;
+      }
+      @keyframes animate {
+        0% {
+          transform: rotate(360deg);
+        }
+        160% {
+          transfbrm: rotate(0deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">
+      <div class="shape"></div>
+    </div>
+
+    <script></script>
+  </body>
+</html>

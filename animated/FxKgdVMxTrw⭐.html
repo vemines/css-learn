@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yin Yang</title>
+    <style>
+      :root {
+        --size: 500px;
+        --dot-size: calc(var(--size) / 10);
+        --perspective: calc(var(--size) * 4);
+        --border-bottom: calc(var(--size) / 2);
+        --dot-border: calc(var(--size) / 5);
+      }
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #f0f0f0; /* Added a light background for better visibility */
+      }
+      .center {
+        position: absolute;
+        background-color: #000;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) perspective(var(--perspective)) rotateX(45deg);
+        border-radius: 50%;
+        box-shadow: 0 5px 50px #383838;
+        width: var(--size);
+        height: var(--size);
+      }
+      .shape {
+        width: var(--size);
+        height: var(--size);
+        border-bottom: var(--border-bottom) solid #fff;
+        border-radius: 50%;
+        animation: animate 5s linear infinite;
+      }
+      .shape::before {
+        content: '';
+        position: absolute;
+        top: 50%; /* Adjusted for better centering */
+        left: 24.89%; /* Adjusted for better centering */
+        transform: translateX(-50%);
+        width: var(--dot-size);
+        height: var(--dot-size);
+        background: #000;
+        border: var(--dot-border) solid #fff;
+        border-radius: 50%;
+      }
+      .shape::after {
+        content: '';
+        position: absolute;
+        top: 50%; /* Adjusted for better centering */
+        right: 24.89%; /* Adjusted for better centering */
+        transform: translateX(50%);
+        width: var(--dot-size);
+        height: var(--dot-size);
+        background: #fff;
+        border: var(--dot-border) solid #000;
+        border-radius: 50%;
+      }
+      @keyframes animate {
+        0% {
+          transform: rotate(360deg);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">
+      <div class="shape"></div>
+    </div>
+
+    <script></script>
+  </body>
+</html>

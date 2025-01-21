@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Type</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #222;
+        position: relative;
+      }
+      h1 {
+        position: relative;
+        text-transform: uppercase;
+        font-family: consolas;
+        letter-spacing: 1.5px;
+        font-size: 100px;
+        color: transparent;
+        white-space: nowrap;
+        user-select: none;
+      }
+      h1::before {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        border-right: 1px solid #fff;
+        white-space: nowrap;
+        background: linear-gradient(to right, #f00, #ff0, #0ff, #0f0, #ffc800);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        /* word 11 char -> 11 steps */
+        animation: animate 6s steps(11) infinite;
+        filter: blur(0.8px);
+      }
+
+      @keyframes animate {
+        0% {
+          width: 0;
+        }
+        70% {
+          width: 100%;
+        }
+        90% {
+          width: 100%;
+        }
+        100% {
+          width: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1 data-text="Colour Type">Colour Type</h1>
+  </body>
+</html>
