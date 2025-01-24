@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Switch</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #28272a;
+      }
+      a {
+        position: relative;
+        width: 300px;
+        height: 90px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgba(255, 255, 255, 0.5);
+        text-decoration: none;
+        letter-spacing: 2px;
+        border-top: 0.5px solid rgba(255, 255, 255, 0.35);
+        border-left: 0.5px solid rgba(255, 255, 255, 0.35);
+        padding-left: 40px;
+        overflow: hidden;
+        transition: 0.5s;
+        font-size: 20px;
+      }
+      a:hover {
+        padding-left: 0;
+        padding-right: 40px;
+        color: rgba(255, 255, 255, 1);
+      }
+      span {
+        position: absolute;
+        left: 5px;
+        width: 75px;
+        height: 75px;
+        background-color: #04fe4d;
+        border-radius: 50%;
+        transition: 0.5s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #1a191d;
+        font-size: 36px;
+      }
+      a:hover span {
+        left: calc(100% - 80px);
+      }
+      a::after {
+        content: '';
+        position: absolute;
+        width: 80px;
+        height: 100%;
+        z-index: 1;
+        background-color: rgba(255, 255, 255, 0.25);
+        transform: translateX(-250px) skewX(30deg);
+        transition: 0.75s ease-in-out;
+      }
+      a:hover::after {
+        transform: translateX(250px) skewX(30deg);
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#">
+      Swipe Next
+      <span> <ion-icon name="arrow-forward"></ion-icon></span>
+    </a>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+  </body>
+</html>

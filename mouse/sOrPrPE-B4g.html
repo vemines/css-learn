@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>a hover</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      .container {
+        position: relative;
+        width: 900px;
+        height: 600px;
+        border: 4px solid #fff;
+      }
+
+      .box {
+        position: absolute;
+        width: 900px;
+        height: 600px;
+      }
+      .box:nth-child(1) {
+        background-image: url(../assets/rect-img1.jpg);
+      }
+      .box:nth-child(1):hover ~ .box:nth-child(2) {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+      }
+      .box:nth-child(2) {
+        background-image: url(../assets/rect-img2.jpg);
+        z-index: 2;
+        transition: 0.5s;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0% 100%);
+      }
+      .box:nth-child(2):hover {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+
+    <script></script>
+  </body>
+</html>
