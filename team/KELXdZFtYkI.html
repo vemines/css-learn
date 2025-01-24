@@ -66,7 +66,7 @@
         top: -10px;
         z-index: 2000;
       }
-      .contentBox {
+      .content {
         position: absolute;
         inset: 0;
         display: flex;
@@ -76,7 +76,7 @@
         transform: scale(0);
         opacity: 0;
       }
-      .contentBox.active {
+      .content.active {
         transform: scale(1);
         opacity: 1;
         transition-delay: 0.5s;
@@ -89,7 +89,7 @@
         align-items: center;
         text-align: center;
       }
-      .card .imgBox {
+      .card .img {
         overflow: hidden;
       }
       .card img {
@@ -202,7 +202,7 @@
         align-items: center;
         gap: 40px;
       }
-      .bottom .imgBox {
+      .bottom .img {
         position: relative;
         border-radius: 50%;
         overflow: hidden;
@@ -210,7 +210,7 @@
         box-shadow: 0 0 0 4px #fff;
         opacity: 0.5;
       }
-      .bottom .imgBox.active {
+      .bottom .img.active {
         opacity: 1;
         scale: 1.2;
         margin: 0 10px;
@@ -228,9 +228,9 @@
       <span></span>
       <span></span>
       <div class="content">
-        <div class="contentBox active" id="content1">
+        <div class="content active" id="content1">
           <div class="card">
-            <div class="imgBox">
+            <div class="img">
               <img src="../assets/sqr-avatar1.jpg" />
             </div>
             <div class="text">
@@ -255,9 +255,9 @@
             </ul>
           </div>
         </div>
-        <div class="contentBox" id="content2">
+        <div class="content" id="content2">
           <div class="card">
-            <div class="imgBox">
+            <div class="img">
               <img src="../assets/sqr-avatar2.jpg" />
             </div>
             <div class="text">
@@ -282,9 +282,9 @@
             </ul>
           </div>
         </div>
-        <div class="contentBox" id="content3">
+        <div class="content" id="content3">
           <div class="card">
-            <div class="imgBox">
+            <div class="img">
               <img src="../assets/sqr-avatar3.jpg" />
             </div>
             <div class="text">
@@ -309,9 +309,9 @@
             </ul>
           </div>
         </div>
-        <div class="contentBox" id="content4">
+        <div class="content" id="content4">
           <div class="card">
-            <div class="imgBox">
+            <div class="img">
               <img src="../assets/sqr-avatar4.jpg" />
             </div>
             <div class="text">
@@ -347,28 +347,28 @@
         <div class="wave" id="wave4"></div>
       </div>
       <div class="icon">
-        <div class="imgBox active" data-id="content1">
+        <div class="img active" data-id="content1">
           <img src="../assets/sqr-avatar1.jpg" />
         </div>
-        <div class="imgBox" data-id="content2">
+        <div class="img" data-id="content2">
           <img src="../assets/sqr-avatar2.jpg" />
         </div>
-        <div class="imgBox" data-id="content3">
+        <div class="img" data-id="content3">
           <img src="../assets/sqr-avatar3.jpg" />
         </div>
-        <div class="imgBox" data-id="content4">
+        <div class="img" data-id="content4">
           <img src="../assets/sqr-avatar4.jpg" />
         </div>
       </div>
     </div>
 
     <script>
-      const contentBoxes = document.querySelectorAll('.contentBox');
-      const bottomImages = document.querySelectorAll('.bottom .imgBox');
+      const contentes = document.querySelectorAll('.content');
+      const bottomImages = document.querySelectorAll('.bottom .img');
 
       bottomImages.forEach((image) => {
         image.addEventListener('click', function () {
-          contentBoxes.forEach((content) => content.classList.remove('active'));
+          contentes.forEach((content) => content.classList.remove('active'));
           bottomImages.forEach((img) => img.classList.remove('active'));
 
           const targetId = this.getAttribute('data-id');
