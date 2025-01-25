@@ -89,7 +89,7 @@
         align-items: center;
         text-align: center;
       }
-      .card .img {
+      .card .image {
         overflow: hidden;
       }
       .card img {
@@ -202,7 +202,7 @@
         align-items: center;
         gap: 40px;
       }
-      .bottom .img {
+      .bottom .image {
         position: relative;
         border-radius: 50%;
         overflow: hidden;
@@ -210,7 +210,7 @@
         box-shadow: 0 0 0 4px #fff;
         opacity: 0.5;
       }
-      .bottom .img.active {
+      .bottom .image.active {
         opacity: 1;
         scale: 1.2;
         margin: 0 10px;
@@ -230,7 +230,7 @@
       <div class="content">
         <div class="content active" id="content1">
           <div class="card">
-            <div class="img">
+            <div class="image">
               <img src="../assets/sqr-avatar1.jpg" />
             </div>
             <div class="text">
@@ -257,7 +257,7 @@
         </div>
         <div class="content" id="content2">
           <div class="card">
-            <div class="img">
+            <div class="image">
               <img src="../assets/sqr-avatar2.jpg" />
             </div>
             <div class="text">
@@ -284,7 +284,7 @@
         </div>
         <div class="content" id="content3">
           <div class="card">
-            <div class="img">
+            <div class="image">
               <img src="../assets/sqr-avatar3.jpg" />
             </div>
             <div class="text">
@@ -311,7 +311,7 @@
         </div>
         <div class="content" id="content4">
           <div class="card">
-            <div class="img">
+            <div class="image">
               <img src="../assets/sqr-avatar4.jpg" />
             </div>
             <div class="text">
@@ -350,13 +350,13 @@
         <div class="img active" data-id="content1">
           <img src="../assets/sqr-avatar1.jpg" />
         </div>
-        <div class="img" data-id="content2">
+        <div class="image" data-id="content2">
           <img src="../assets/sqr-avatar2.jpg" />
         </div>
-        <div class="img" data-id="content3">
+        <div class="image" data-id="content3">
           <img src="../assets/sqr-avatar3.jpg" />
         </div>
-        <div class="img" data-id="content4">
+        <div class="image" data-id="content4">
           <img src="../assets/sqr-avatar4.jpg" />
         </div>
       </div>
@@ -364,7 +364,7 @@
 
     <script>
       const contentes = document.querySelectorAll('.content');
-      const bottomImages = document.querySelectorAll('.bottom .img');
+      const bottomImages = document.querySelectorAll('.bottom .image');
 
       bottomImages.forEach((image) => {
         image.addEventListener('click', function () {
