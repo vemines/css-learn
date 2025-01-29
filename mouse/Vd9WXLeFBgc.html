@@ -23,8 +23,7 @@
         font-size: 2em;
         user-select: none;
         pointer-events: none;
-        /* opacity: 0; */
-        animation: animate 15s linear infinite;
+        animation: animate 15s linear infinite, animate2 15s linear infinite;
       }
       h2::before {
         content: '';
@@ -47,108 +46,18 @@
       }
       @keyframes animate {
         0% {
-          color: hsl(0, 100%, 50%);
-          text-shadow: 0 0 10px hsl(0, 100%, 50%), 0 0 20px hsl(0, 100%, 50%);
-        }
-        4% {
-          color: hsl(30, 100%, 50%);
-          text-shadow: 0 0 10px hsl(30, 100%, 50%), 0 0 20px hsl(30, 100%, 50%);
-        }
-        8% {
-          color: hsl(60, 100%, 50%);
-          text-shadow: 0 0 10px hsl(60, 100%, 50%), 0 0 20px hsl(60, 100%, 50%);
-        }
-        12% {
-          color: hsl(90, 100%, 50%);
-          text-shadow: 0 0 10px hsl(90, 100%, 50%), 0 0 20px hsl(90, 100%, 50%);
-        }
-        16% {
-          color: hsl(120, 100%, 50%);
-          text-shadow: 0 0 10px hsl(120, 100%, 50%), 0 0 20px hsl(120, 100%, 50%);
-        }
-        20% {
-          color: hsl(150, 100%, 50%);
-          text-shadow: 0 0 10px hsl(150, 100%, 50%), 0 0 20px hsl(150, 100%, 50%);
-        }
-        24% {
-          color: hsl(180, 100%, 50%);
-          text-shadow: 0 0 10px hsl(180, 100%, 50%), 0 0 20px hsl(180, 100%, 50%);
-        }
-        28% {
-          color: hsl(210, 100%, 50%);
-          text-shadow: 0 0 10px hsl(210, 100%, 50%), 0 0 20px hsl(210, 100%, 50%);
-        }
-        32% {
-          color: hsl(240, 100%, 50%);
-          text-shadow: 0 0 10px hsl(240, 100%, 50%), 0 0 20px hsl(240, 100%, 50%);
-        }
-        36% {
-          color: hsl(270, 100%, 50%);
-          text-shadow: 0 0 10px hsl(270, 100%, 50%), 0 0 20px hsl(270, 100%, 50%);
-        }
-        40% {
-          color: hsl(300, 100%, 50%);
-          text-shadow: 0 0 10px hsl(300, 100%, 50%), 0 0 20px hsl(300, 100%, 50%);
-        }
-        44% {
-          color: hsl(330, 100%, 50%);
-          text-shadow: 0 0 10px hsl(330, 100%, 50%), 0 0 20px hsl(330, 100%, 50%);
-        }
-        48% {
-          color: hsl(360, 100%, 50%);
-          text-shadow: 0 0 10px hsl(360, 100%, 50%), 0 0 20px hsl(360, 100%, 50%);
-        }
-        52% {
-          color: hsl(330, 100%, 50%);
-          text-shadow: 0 0 10px hsl(330, 100%, 50%), 0 0 20px hsl(330, 100%, 50%);
-        }
-        56% {
-          color: hsl(300, 100%, 50%);
-          text-shadow: 0 0 10px hsl(300, 100%, 50%), 0 0 20px hsl(300, 100%, 50%);
-        }
-        60% {
-          color: hsl(270, 100%, 50%);
-          text-shadow: 0 0 10px hsl(270, 100%, 50%), 0 0 20px hsl(270, 100%, 50%);
-        }
-        64% {
-          color: hsl(240, 100%, 50%);
-          text-shadow: 0 0 10px hsl(240, 100%, 50%), 0 0 20px hsl(240, 100%, 50%);
-        }
-        68% {
-          color: hsl(210, 100%, 50%);
-          text-shadow: 0 0 10px hsl(210, 100%, 50%), 0 0 20px hsl(210, 100%, 50%);
-        }
-        72% {
-          color: hsl(180, 100%, 50%);
-          text-shadow: 0 0 10px hsl(180, 100%, 50%), 0 0 20px hsl(180, 100%, 50%);
-        }
-        76% {
-          color: hsl(150, 100%, 50%);
-          text-shadow: 0 0 10px hsl(150, 100%, 50%), 0 0 20px hsl(150, 100%, 50%);
-        }
-        80% {
-          color: hsl(120, 100%, 50%);
-          text-shadow: 0 0 10px hsl(120, 100%, 50%), 0 0 20px hsl(120, 100%, 50%);
-        }
-        84% {
-          color: hsl(90, 100%, 50%);
-          text-shadow: 0 0 10px hsl(90, 100%, 50%), 0 0 20px hsl(90, 100%, 50%);
-        }
-        88% {
-          color: hsl(60, 100%, 50%);
-          text-shadow: 0 0 10px hsl(60, 100%, 50%), 0 0 20px hsl(60, 100%, 50%);
-        }
-        92% {
-          color: hsl(30, 100%, 50%);
-          text-shadow: 0 0 10px hsl(30, 100%, 50%), 0 0 20px hsl(30, 100%, 50%);
-        }
-        96% {
-          color: hsl(0, 100%, 50%);
-          text-shadow: 0 0 10px hsl(0, 100%, 50%), 0 0 20px hsl(0, 100%, 50%);
+          color: #0f0;
         }
         100% {
-          color: hsl(0, 100%, 50%);
-          text-shadow: 0 0 10px hsl(0, 100%, 50%), 0 0 20px hsl(0, 100%, 50%);
+          color: #0f0;
+        }
+      }
+      @keyframes animate2 {
+        0% {
+          filter: hue-rotate(0deg);
+        }
+        100% {
+          filter: hue-rotate(360deg);
         }
       }
     </style>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loading</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      .loading {
+        width: 450px;
+        height: 100px;
+        background-color: #affd5b;
+        border: 4px solid #262626;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: skewX(-20deg);
+        overflow: hidden;
+      }
+      .loading::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        border-left: 4px solid #262626;
+        border-right: 4px solid #262626;
+        animation: animate 5s linear infinite;
+      }
+      @keyframes animate {
+        0% {
+          transform: translateX(-100%);
+        }
+        50% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
+      h1 {
+        position: relative;
+        color: #262626;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: sans-serif;
+        letter-spacing: 15px;
+        font-size: 48px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loading">
+      <h1>Loading</h1>
+    </div>
+  </body>
+</html>

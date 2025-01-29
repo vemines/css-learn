@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100vw;
+        min-height: 100vh;
+        background-color: #09111d;
+        overflow: hidden;
+        padding: 0 20px;
+      }
+      span {
+        position: relative;
+        bottom: 30px;
+        width: 30px;
+        height: 30px;
+        background-color: #4fc3dc;
+        box-shadow: 0 0 0 10px #4fc3dc44, 0 0 50px #4fc3dc, -100px 0 #4fc3dc99, 100px 0 #ff2d7599;
+        margin: 0 4px;
+        border-radius: 50%;
+        animation: animate ease-in-out infinite;
+      }
+      span:nth-child(even) {
+        background-color: #ff2d75;
+        box-shadow: 0 0 0 10px #ff2d7544, 0 0 50px #ff2d75, -100px 0 #4fc3dc99;
+      }
+      @keyframes animate {
+        0% {
+          transform: translateY(120vh) scale(1) rotate(0deg);
+        }
+        100% {
+          transform: translateY(-50vh) scale(0.7) rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      for (let i = 0; i < 30; i++) {
+        const rd = Math.floor(Math.random() * 20 + 10);
+        const spanEl = document.createElement('span');
+        spanEl.style.setProperty('--i', rd);
+        spanEl.style.animationDelay = -Math.random() * 5 - 3 + 's';
+        spanEl.style.animationDuration = Math.random() * 5 + 5 + 's';
+        document.body.appendChild(spanEl);
+      }
+    </script>
+  </body>
+</html>
