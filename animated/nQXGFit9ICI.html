@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sprites</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      .container {
+        width: calc(1248px / 6);
+        height: 208px;
+        background-image: url(../assets/sprites1.avif);
+        animation: animate 1s steps(6) infinite;
+      }
+      @keyframes animate {
+        from {
+          background-position: 0;
+        }
+        to {
+          background-position: -1248px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container"></div>
+  </body>
+</html>
