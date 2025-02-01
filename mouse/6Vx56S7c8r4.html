@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hover Image</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #121212;
+      }
+      .container {
+        display: flex;
+        width: 1030px;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .box {
+        width: 250px;
+        height: 250px;
+        position: relative;
+        overflow: hidden;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .overlay {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        top: 0;
+        left: 0;
+      }
+      h2 {
+        color: #fff;
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box snake">
+        <img src="../assets/sqr-avatar1.jpg" />
+        <div class="overlay"><h2>Image 01</h2></div>
+      </div>
+      <div class="box snake">
+        <img src="../assets/sqr-avatar2.jpg" />
+        <div class="overlay"><h2>Image 02</h2></div>
+      </div>
+      <div class="box snake">
+        <img src="../assets/sqr-avatar3.jpg" />
+        <div class="overlay"><h2>Image 03</h2></div>
+      </div>
+      <div class="box snake">
+        <img src="../assets/sqr-avatar4.jpg" />
+        <div class="overlay"><h2>Image 04</h2></div>
+      </div>
+      <div class="box snake">
+        <img src="../assets/sqr-avatar2.jpg" />
+        <div class="overlay"><h2>Image 05</h2></div>
+      </div>
+      <div class="box snake">
+        <img src="../assets/sqr-avatar1.jpg" />
+        <div class="overlay"><h2>Image 06</h2></div>
+      </div>
+      <div class="box snake">
+        <img src="../assets/sqr-avatar4.jpg" />
+        <div class="overlay"><h2>Image 07</h2></div>
+      </div>
+      <div class="box snake">
+        <img src="../assets/sqr-avatar3.jpg" />
+        <div class="overlay"><h2>Image 08</h2></div>
+      </div>
+    </div>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/snake.jquery.js"></script>
+    <script>
+      $('.snake').snakeify();
+      $('.snake').snakeify({
+        speed: 200,
+      });
+    </script>
+  </body>
+</html>
