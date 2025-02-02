@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hover Focus</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        overflow: hidden;
+        background: url(../assets/bg2-blur.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        cursor: none;
+      }
+      #cursor {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background-image: url(../assets/bg2.png);
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cursor"></div>
+    <script>
+      const cursor = document.getElementById('cursor');
+      document.addEventListener('mousemove', function (e) {
+        var x = e.clientX;
+        var y = e.clientY;
+        cursor.style.left = x + 'px';
+        cursor.style.top = y + 'pX';
+      });
+    </script>
+  </body>
+</html>

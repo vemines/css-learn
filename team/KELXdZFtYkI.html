@@ -60,13 +60,13 @@
           transform: rotate(360deg);
         }
       }
-      .content {
+      /* .square .content {
         position: relative;
         width: 100%;
         top: -10px;
         z-index: 2000;
-      }
-      .content {
+      } */
+      .square .content {
         position: absolute;
         inset: 0;
         display: flex;
@@ -76,7 +76,7 @@
         transform: scale(0);
         opacity: 0;
       }
-      .content.active {
+      .square .content.active {
         transform: scale(1);
         opacity: 1;
         transition-delay: 0.5s;
@@ -89,10 +89,10 @@
         align-items: center;
         text-align: center;
       }
-      .card .image {
+      .square .image {
         overflow: hidden;
       }
-      .card img {
+      .square img {
         width: 180px;
         height: 180px;
         border-radius: 50%;
@@ -227,7 +227,7 @@
       <span></span>
       <span></span>
       <span></span>
-      <div class="content">
+      <div>
         <div class="content active" id="content1">
           <div class="card">
             <div class="image">
@@ -347,7 +347,7 @@
         <div class="wave" id="wave4"></div>
       </div>
       <div class="icon">
-        <div class="img active" data-id="content1">
+        <div class="image active" data-id="content1">
           <img src="../assets/sqr-avatar1.jpg" />
         </div>
         <div class="image" data-id="content2">

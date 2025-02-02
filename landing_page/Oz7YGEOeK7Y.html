@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+      }
+      a {
+        text-decoration: none;
+      }
+      body {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        background-image: url(../assets/fitness-large-bg.jpg);
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        overflow: hidden;
+        padding: 30px 100px;
+      }
+      header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 30px 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      header i {
+        visibility: hidden;
+      }
+      .logo {
+        font-size: 32px;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 700;
+        text-decoration: none;
+        letter-spacing: 1px;
+      }
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
+      li a {
+        font-size: 18px;
+        color: #fff;
+        font-weight: 500;
+      }
+      li a:hover {
+        color: #03a9f4;
+      }
+      .content {
+        max-width: 600px;
+      }
+      h2 {
+        color: #fff;
+        font-size: 50px;
+      }
+      p {
+        font-size: 18px;
+        color: #fff;
+        line-height: 22px;
+        margin: 20px 0;
+      }
+      .content a {
+        display: inline-block;
+        padding: 12px 32px;
+        background: #03a9f4;
+        color: #fff;
+        font-weight: 500;
+        letter-spacing: 1px;
+      }
+      .social {
+        display: flex;
+        margin-top: 50px;
+        gap: 30px;
+      }
+      i {
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        font-size: 28px;
+        color: #fff;
+        cursor: pointer;
+      }
+      @media (max-width: 991px) {
+        body {
+          padding: 15px 40px;
+          background-image: url(../assets/fitness-bg.jpg);
+        }
+        header {
+          padding: 15px 40px;
+        }
+        header i {
+          visibility: visible;
+          z-index: 100;
+        }
+        h2 {
+          font-size: 40px;
+        }
+        p {
+          font-size: 16px;
+        }
+        .navigation {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: #000;
+          z-index: 10;
+          display: none;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        }
+        .navigation.active {
+          display: flex;
+        }
+        li a {
+          font-size: 26px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Fitness</a>
+      <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+      <ul class="navigation">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Trainers</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </header>
+
+    <div class="content">
+      <h2>Build Perfect Body</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. A voluptatibus obcaecati ea rem
+        voluptatem. Facere error, non eaque itaque tenetur quis maiores labore amet facilis ut
+        tempora nisi nihil expedita!
+      </p>
+      <a href="#">Get Started</a>
+    </div>
+
+    <div class="social">
+      <i class="fa-brands fa-facebook-f"></i>
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-instagram"></i>
+    </div>
+    <script>
+      let menuState = false;
+      function toggleMenu() {
+        const toggleMenu = document.querySelector('header i');
+        const navigation = document.querySelector('.navigation');
+        toggleMenu.classList.toggle('active');
+        navigation.classList.toggle('active');
+        menuState = !menuState;
+        toggleMenu.classList.remove('fa-x');
+        toggleMenu.classList.remove('fa-bars');
+        toggleMenu.classList.add(menuState ? 'fa-x' : 'fa-bars');
+      }
+    </script>
+  </body>
+</html>
