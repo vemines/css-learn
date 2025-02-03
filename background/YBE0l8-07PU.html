@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Font awesome Bg Icon</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <style>
+      body {
+        min-height: 100vh;
+        overflow: hidden;
+        background-color: #111;
+      }
+      .container {
+        position: relative;
+        transform: rotate(-30deg) translateY(-5%);
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .iconRow {
+        display: flex;
+        gap: 10px;
+        font-size: 40px;
+        width: 150%;
+        justify-content: center;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      .icon {
+        color: transparent;
+        opacity: 0.35;
+        user-select: none;
+        -webkit-text-stroke: 1px #0f0;
+        transition: color 2s ease, opacity 1s ease;
+      }
+
+      .icon:hover {
+        color: #0f0;
+        opacity: 1;
+        transition: 0s;
+      }
+      .icon::before {
+        content: var(--content);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container"></div>
+    <script>
+      const container = document.querySelector('.container');
+      const contentTo = 20;
+      const iconContent = Array(contentTo)
+        .fill()
+        .map((_, i) => `\\f${(i + 1).toString().padStart(3, '0')}`);
+
+      for (let i = 0; i < 21; i++) {
+        const row = document.createElement('div');
+        row.className = 'iconRow';
+
+        for (let j = 0; j < 40; j++) {
+          const icon = document.createElement('i');
+          icon.className = 'icon fa-solid';
+          const rdContent = iconContent[Math.floor(Math.random() * contentTo)];
+          icon.style.setProperty('--content', `"${rdContent}"`);
+          row.appendChild(icon);
+        }
+        container.appendChild(row);
+      }
+      console.log('Hover too fast cause lag, remove transition');
+    </script>
+  </body>
+</html>

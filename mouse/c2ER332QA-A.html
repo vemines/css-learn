@@ -9,7 +9,6 @@
         padding: 0;
         margin: 0;
         box-sizing: border-box;
-        font-family: 'Poppins', sans-serif;
       }
       body {
         margin: 0;
@@ -20,7 +19,6 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        cursor: none;
       }
       #cursor {
         position: absolute;
@@ -40,8 +38,8 @@
     <script>
       const cursor = document.getElementById('cursor');
       document.addEventListener('mousemove', function (e) {
-        var x = e.clientX;
-        var y = e.clientY;
+        var x = e.clientX - 150;
+        var y = e.clientY - 150;
         cursor.style.left = x + 'px';
         cursor.style.top = y + 'pX';
       });

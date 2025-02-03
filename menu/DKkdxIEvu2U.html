@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      a {
+        text-decoration: none;
+      }
+      body {
+        background-color: #fffc85;
+      }
+      .toggle {
+        position: fixed;
+        top: 40px;
+        left: 40px;
+        z-index: 2;
+        cursor: pointer;
+      }
+      i {
+        color: #262626;
+        font-size: 24px;
+      }
+      .navigation {
+        margin: 0;
+        padding: 0;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        z-index: 1;
+        transition: 0.5s;
+      }
+      ul {
+        position: absolute;
+        list-style: none;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+      li a {
+        padding: 16px;
+        display: inline-block;
+        font-family: verdana;
+        font-size: 32px;
+        text-decoration: none;
+        text-transform: uppercase;
+        border-radius: 8px;
+        color: #262626;
+      }
+      li a:hover {
+        background-color: #fffc85;
+      }
+      .navigation.active {
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toggle">
+      <i class="fa fa-bars"></i>
+    </div>
+    <div class="navigation">
+      <ul>
+        <li>
+          <a href="#"><span data-text="Home">Home</span></a>
+        </li>
+        <li>
+          <a href="#"><span data-text="About">About</span></a>
+        </li>
+        <li>
+          <a href="#"><span data-text="Services">Services</span></a>
+        </li>
+        <li>
+          <a href="#"><span data-text="Portfolio">Portfolio</span></a>
+        </li>
+        <li>
+          <a href="#"><span data-text="Contact">Contact</span></a>
+        </li>
+      </ul>
+    </div>
+    <script>
+      const menu = document.querySelector('.toggle');
+      menu.onclick = () => {
+        const navigation = document.querySelector('.navigation');
+        navigation.classList.toggle('active');
+      };
+    </script>
+  </body>
+</html>
