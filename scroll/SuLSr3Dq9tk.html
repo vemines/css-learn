@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Horizontal Parallax Scroll</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+      html {
+        scrollbar-width: thin;
+      }
+      .container {
+        position: fixed;
+        display: flex;
+      }
+      section {
+        min-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #fffee1;
+      }
+      section:nth-child(2) {
+        background-color: #e2fcff;
+      }
+      section:nth-child(3) {
+        background-color: #d0eaff;
+      }
+      section:nth-child(4) {
+        background-color: #fce8f4;
+      }
+      .content {
+        max-width: 800px;
+        padding: 40px;
+        text-align: center;
+        color: #111;
+      }
+      h2 {
+        font-size: 64px;
+      }
+      p {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" data-0="transform:translateX(0%)" data-500="transform:translateX(-300%)">
+      <section>
+        <div class="content">
+          <h2>Section 1</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto neque explicabo nulla
+            aspernatur, provident, assumenda earum nobis blanditiis tempora qui officia cupiditate
+            voluptate beatae laudantium vero porro culpa voluptatibus? Consectetur!
+          </p>
+        </div>
+      </section>
+      <section>
+        <div class="content">
+          <h2>Section 2</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto neque explicabo nulla
+            aspernatur, provident, assumenda earum nobis blanditiis tempora qui officia cupiditate
+            voluptate beatae laudantium vero porro culpa voluptatibus? Consectetur!
+          </p>
+        </div>
+      </section>
+      <section>
+        <div class="content">
+          <h2>Section 3</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto neque explicabo nulla
+            aspernatur, provident, assumenda earum nobis blanditiis tempora qui officia cupiditate
+            voluptate beatae laudantium vero porro culpa voluptatibus? Consectetur!
+          </p>
+        </div>
+      </section>
+      <section>
+        <div class="content">
+          <h2>Section 4</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto neque explicabo nulla
+            aspernatur, provident, assumenda earum nobis blanditiis tempora qui officia cupiditate
+            voluptate beatae laudantium vero porro culpa voluptatibus? Consectetur!
+          </p>
+        </div>
+      </section>
+      <script src="../assets/js/skrollr.js"></script>
+      <script>
+        var s = skrollr.init();
+      </script>
+    </div>
+  </body>
+</html>

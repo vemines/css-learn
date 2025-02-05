@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anime.js</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Telugu:wght@100..900&display=swap');
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+      }
+      a {
+        text-decoration: none;
+      }
+      body {
+        min-height: 100vh;
+        background-color: #222;
+      }
+      header {
+        position: fixed;
+        padding: 30px 50px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+      .logo {
+        color: #fff;
+        font-size: 32px;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 2px;
+      }
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 40px;
+      }
+      li a {
+        color: #999;
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: 0.4s;
+        font-weight: 500;
+      }
+      li a:hover,
+      li a.active {
+        color: #fff;
+      }
+      section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 100vh;
+        padding: 100px;
+        gap: 100px;
+      }
+      .content {
+        max-width: 700px;
+      }
+      h2 {
+        font-size: 50px;
+        color: #fff;
+        font-weight: 500;
+        font-family: 'Noto Serif Telugu', sans-serif;
+      }
+      h2 b {
+        color: #0f0;
+      }
+      .content p {
+        color: #999;
+        font-size: 18px;
+      }
+      .content a {
+        padding: 10px 15px;
+        background-color: #fff;
+        color: #222;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 500;
+        display: inline-block;
+        margin-top: 25px;
+        letter-spacing: 2px;
+        transition: 0.5s;
+      }
+      .content a:hover {
+        letter-spacing: 4px;
+      }
+      .container {
+        position: relative;
+        width: 400px;
+        right: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .element {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        background-color: #fff;
+        scale: 0.75;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Logo</a>
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Work</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </header>
+    <section>
+      <div class="content">
+        <h2>Lorem ipsum, dolor sit amet consectetur <b>Adipisicing elit</b>.</h2>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur expedita error quam
+          aperiam doloremque commodi voluptate soluta minima ad porro, sequi itaque similique
+          adipisci. Ipsam ab veritatis amet cumque ipsa!
+        </p>
+        <a href="#">Learn More</a>
+      </div>
+      <div class="container"></div>
+    </section>
+    <script src="../assets/js/anime.min.js"></script>
+    <script>
+      const container = document.querySelector('.container');
+      for (let i = 0; i < 100; i++) {
+        let dot = document.createElement('div');
+        dot.classList.add('element');
+        container.appendChild(dot);
+      }
+
+      const elements = document.querySelectorAll('.element');
+      const animation = anime.timeline({
+        targets: elements,
+        easing: 'easeInOutExpo',
+        loop: true,
+        delay: anime.stagger(100, { grid: [10, 10], from: 'center' }),
+      });
+      animation
+        .add({
+          rotateZ: 180,
+          translateY: anime.stagger(-20, { grid: [10, 10], from: 'center', axis: 'y' }),
+          translateX: anime.stagger(-20, { grid: [10, 10], from: 'center', axis: 'x' }),
+          opacity: 1,
+        })
+        .add({
+          borderRadius: 50,
+        })
+        .add({
+          scale: 0.2,
+          opacity: 0.2,
+        })
+        .add({
+          rotateZ: 180,
+          translateY: anime.stagger(0, { grid: [10, 10], from: 'center', axis: 'y' }),
+          translateX: anime.stagger(0, { grid: [10, 10], from: 'center', axis: 'x' }),
+          opacity: 1,
+        })
+        .add({
+          opacity: 1,
+          scale: 1,
+        })
+        .add({ borderRadius: 0 });
+    </script>
+  </body>
+</html>
