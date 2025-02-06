@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wave Bottom</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+      }
+      body {
+        display: flex;
+        align-items: flex-end;
+        min-height: 100vh;
+        background: #333;
+      }
+      footer {
+        position: relative;
+        width: 100%;
+        background: #3586ff;
+        min-height: 150px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+      }
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+      }
+      a {
+        text-decoration: none;
+        color: #fff;
+        display: inline-block;
+        transition: 0.4s;
+      }
+      .social li a {
+        font-size: 32px;
+      }
+      .social li:hover a {
+        transform: translateY(-10px);
+      }
+      .menu li a {
+        font-size: 20px;
+        opacity: 0.75;
+      }
+      .menu li:hover a {
+        opacity: 1;
+      }
+      p {
+        color: #fff;
+      }
+      .wave {
+        position: absolute;
+        top: -100px;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: url(../assets/wave-bold.png);
+        background-size: 1000px 100px;
+      }
+      #wave1 {
+        z-index: 1000;
+        opacity: 1;
+        bottom: 0;
+        animation: animateWave 4s linear infinite;
+      }
+      #wave2 {
+        z-index: 999;
+        opacity: 0.5;
+        bottom: 10;
+        animation: animateWave2 4s linear infinite;
+      }
+      #wave3 {
+        z-index: 1000;
+        opacity: 0.2;
+        bottom: 15;
+        animation: animateWave 3s linear infinite;
+      }
+      #wave4 {
+        z-index: 1000;
+        opacity: 0.1;
+        bottom: 20;
+        animation: animateWave2 3s linear infinite;
+      }
+      @keyframes animateWave {
+        0% {
+          background-position-x: 1000px;
+        }
+        100% {
+          background-position-x: 0px;
+        }
+      }
+      @keyframes animateWave2 {
+        0% {
+          background-position-x: 0px;
+        }
+        100% {
+          background-position-x: 1000px;
+        }
+      }
+      #wave1 {
+        z-index: 1000;
+        opacity: 1;
+        bottom: 0;
+        animation: animateWave 4s linear infinite;
+      }
+      #wave2 {
+        z-index: 999;
+        opacity: 0.5;
+        bottom: 10;
+        animation: animateWave2 4s linear infinite;
+      }
+      #wave3 {
+        z-index: 1000;
+        opacity: 0.2;
+        bottom: 15;
+        animation: animateWave 3s linear infinite;
+      }
+      #wave4 {
+        z-index: 1000;
+        opacity: 0.1;
+        bottom: 20;
+        animation: animateWave2 3s linear infinite;
+      }
+      @keyframes animateWave {
+        0% {
+          background-position-x: 1000px;
+        }
+        100% {
+          background-position-x: 0px;
+        }
+      }
+      @keyframes animateWave2 {
+        0% {
+          background-position-x: 0px;
+        }
+        100% {
+          background-position-x: 1000px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <footer>
+      <ul class="social">
+        <div class="waves">
+          <div class="wave" id="wave1"></div>
+          <div class="wave" id="wave2"></div>
+          <div class="wave" id="wave3"></div>
+          <div class="wave" id="wave4"></div>
+        </div>
+        <li>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </li>
+      </ul>
+
+      <ul class="menu">
+        <li>
+          <a href="#"><span data-text="Home">Home</span></a>
+        </li>
+        <li>
+          <a href="#"><span data-text="About">About</span></a>
+        </li>
+        <li>
+          <a href="#"><span data-text="Services">Services</span></a>
+        </li>
+        <li>
+          <a href="#"><span data-text="Portfolio">Portfolio</span></a>
+        </li>
+        <li>
+          <a href="#"><span data-text="Contact">Contact</span></a>
+        </li>
+      </ul>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, atque!</p>
+    </footer>
+  </body>
+</html>
