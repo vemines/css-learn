@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heart Mouse Move</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        min-height: 100vh;
+        background: radial-gradient(#4c0c0c, #250707);
+        overflow: hidden;
+      }
+      span {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        filter: drop-shadow(5px 5px 10px #000) drop-shadow(0 0 10px #f00);
+        pointer-events: none;
+        animation: animate 2s linear infinite;
+      }
+      span::before {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 30px;
+        background-color: #f00;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        transform-origin: bottom center;
+        rotate: 315deg;
+      }
+      span::after {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        width: 30px;
+        height: 20px;
+        background-color: #f00;
+        border-radius: 20px;
+        transform-origin: bottom center;
+        rotate: 315deg;
+      }
+      @keyframes animate {
+        0% {
+          opacity: 0;
+          transform: translate(0, 0);
+        }
+        10% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+          transform: translate(var(--x), var(--y));
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let prevMouseX = null;
+      let prevMouseY = null;
+
+      function createHeart(event) {
+        if (prevMouseX !== null && prevMouseY !== null) {
+          let deltaX = event.pageX - prevMouseX;
+          let deltaY = event.pageY - prevMouseY;
+          let distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+          if (distance >= 100) {
+            addHeart();
+          }
+        } else {
+          addHeart();
+        }
+      }
+
+      function addHeart() {
+        prevMouseX = event.pageX;
+        prevMouseY = event.pageY;
+        let span = document.createElement('span');
+        document.body.appendChild(span);
+        span.style.top = event.pageY + 'px';
+        span.style.left = event.pageX + 'px';
+        span.style.scale = `${Math.random() * 2 + 1}`;
+        span.style.setProperty('--x', `${Math.random() * 400 - 200}px`);
+        span.style.setProperty('--y', `${Math.random() * 400 - 200}px`);
+        setTimeout(() => {
+          document.body.removeChild(span);
+        }, 1500);
+      }
+      document.addEventListener('mousemove', createHeart);
+    </script>
+  </body>
+</html>
