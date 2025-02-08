@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing page</title>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+      }
+      a {
+        text-decoration: none;
+      }
+      .banner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .box {
+        position: relative;
+        height: 100vh;
+      }
+      .box:last-child {
+        background-color: #ff9;
+      }
+      header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+      }
+      .logo {
+        position: relative;
+        font-size: 24px;
+        color: #111;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+      }
+      li a {
+        font-weight: 500;
+        color: #bdbdbd;
+        letter-spacing: 1px;
+      }
+      li:hover a {
+        color: #333;
+      }
+      .contents {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 60px;
+      }
+      .content h2 {
+        font-size: 60px;
+        color: #333;
+      }
+      .content p {
+        font-size: 18px;
+        color: #777;
+        line-height: 28px;
+      }
+      .content a {
+        display: inline-block;
+        font-size: 18px;
+        margin-top: 20px;
+        color: #333;
+        font-weight: 500;
+        border: 2px solid #333;
+        padding: 10px 30px;
+        letter-spacing: 1px;
+        transition: 0.5s;
+      }
+      .content a:hover {
+        background-color: #333;
+        color: #fff;
+        letter-spacing: 2px;
+      }
+      .social {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        bottom: 30px;
+        right: 60px;
+        gap: 30px;
+      }
+      .social h3 {
+        font-weight: 500;
+        color: #bdbdbd;
+        letter-spacing: 1px;
+      }
+      .social img {
+        width: 40px;
+      }
+      .images {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .image {
+        position: relative;
+        width: 50%;
+        height: 50%;
+        background-color: #0f0;
+      }
+      .image:nth-child(2) {
+        background-color: #f00;
+      }
+      .image:nth-child(3) {
+        background-color: #00f;
+        width: 100%;
+      }
+      .image img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      @media (max-width: 991px) {
+        .banner {
+          grid-template-columns: 1fr;
+        }
+        header {
+          padding: 20px 40px;
+        }
+        .contents {
+          padding: 40px;
+          min-height: 500px;
+          height: 70vh;
+        }
+      }
+      @media (max-width: 600px) {
+        .content h2 {
+          font-size: 40px;
+        }
+        .image {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="banner">
+      <div class="box contents">
+        <header>
+          <a href="#" class="logo">Hmmm.</a>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </header>
+        <div class="content">
+          <h2>Lorem ipsum.</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam ipsa temporibus ullam
+            labore placeat repudiandae possimus fugit eveniet, illum praesentium harum nemo fugiat
+            natus perspiciatis commodi, deserunt necessitatibus cum aspernatur.
+          </p>
+          <a href="#">Read More</a>
+        </div>
+
+        <div class="social">
+          <h3>Follow me on:</h3>
+          <a href="#"><img src="../assets/twitter.png" /></a>
+          <a href="#"><img src="../assets/instagram.png" /></a>
+        </div>
+      </div>
+      <div class="box images">
+        <div class="image"><img src="../assets/sqr1-thing.jpg" /></div>
+        <div class="image"><img src="../assets/sqr2-thing.jpg" /></div>
+        <div class="image"><img src="../assets/rect1-1x2-thing.jpg" /></div>
+      </div>
+    </section>
+  </body>
+</html>
