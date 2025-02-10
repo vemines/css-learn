@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Particles Mouse Move</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      section {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+      }
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      #particles-js {
+        position: relative;
+        height: 100vh;
+        background: #fff;
+        mix-blend-mode: screen;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <img src="../assets/bg1.png" />
+      <div id="particles-js"></div>
+    </section>
+    <script src="../assets/js/particles.min.js"></script>
+    <script src="../assets/js/particles.app.js"></script>
+  </body>
+</html>
