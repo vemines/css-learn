@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smoke Animation</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        min-height: 100vh;
+        position: relative;
+      }
+      ul {
+        position: absolute;
+        bottom: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        list-style: none;
+      }
+      li {
+        position: absolute;
+        list-style: none;
+        width: 80px;
+        height: 80px;
+        background: #262626;
+        border-radius: 50%;
+      }
+      li:nth-child(odd) {
+        animation: animate 2.8s linear infinite;
+        animation-delay: calc(var(--i) * 0.4s);
+      }
+      li:nth-child(even) {
+        animation: animate2 2.8s linear infinite;
+        animation-delay: calc(var(--i) * 0.4s);
+      }
+      li:last-child {
+        animation: none;
+        filter: blur(5px);
+      }
+      @keyframes animate {
+        0% {
+          transform: translate(0, 0) scale(1);
+          opacity: 1;
+          filter: blur(5px);
+        }
+        100% {
+          transform: translate(-100px, -500px) scale(3);
+          opacity: 0;
+          filter: blur(10px);
+        }
+      }
+      @keyframes animate2 {
+        0% {
+          transform: translate(0, 0) scale(1);
+          opacity: 1;
+          filter: blur(5px);
+        }
+        100% {
+          transform: translate(100px, -500px) scale(3);
+          opacity: 0;
+          filter: blur(10px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li style="--i: 0"></li>
+      <li style="--i: 1"></li>
+      <li style="--i: 2"></li>
+      <li style="--i: 3"></li>
+      <li style="--i: 4"></li>
+      <li style="--i: 5"></li>
+      <li style="--i: 6"></li>
+      <li style="--i: 7"></li>
+      <li style="--i: 8"></li>
+      <li style="--i: 9"></li>
+    </ul>
+  </body>
+</html>
