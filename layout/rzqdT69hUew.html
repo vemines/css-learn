@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Staggered Gallery</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 100%;
+        display: grid;
+        grid-auto-flow: dense;
+        grid-template:
+          '1fr 1fr 1fr 1fr 1fr' 33.33vh
+          '1fr 1fr 1fr 1fr 1fr' 33.33vh
+          '1fr 1fr 1fr 1fr 1fr' 33.33vh;
+      }
+      .box {
+        position: relative;
+        background-color: #ccc;
+      }
+      .a {
+        grid-row: span 2;
+      }
+      .b,
+      .f,
+      .h,
+      .j {
+        grid-column: span 2;
+      }
+      .box img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      @media (max-width: 991px) {
+        .container {
+          grid-template:
+            '1fr 1fr 1fr' 200px
+            '1fr 1fr 1fr' 200px
+            '1fr 1fr 1fr' 200px
+            '1fr 1fr 1fr' 200px
+            '1fr 1fr 1fr' 200px;
+        }
+      }
+      @media (max-width: 768px) {
+        .container {
+          grid-template:
+            '1fr 1fr' 250px
+            '1fr 1fr' 250px
+            '1fr 1fr' 250px
+            '1fr 1fr' 250px
+            '1fr 1fr' 250px
+            '1fr 1fr' 250px
+            '1fr 1fr' 250px;
+        }
+        .h {
+          grid-column: span 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box a">
+        <img src="../assets/bg1.png" />
+      </div>
+      <div class="box b">
+        <img src="../assets/bg1.png" />
+      </div>
+      <div class="box c">
+        <img src="../assets/bg1.png" />
+      </div>
+      <div class="box d">
+        <img src="../assets/bg1.png" />
+      </div>
+      <div class="box e">
+        <img src="../assets/bg1.png" />
+      </div>
+      <div class="box f">
+        <img src="../assets/bg1.png" />
+      </div>
+      <div class="box g">
+        <img src="../assets/bg1.png" />
+      </div>
+      <div class="box h">
+        <img src="../assets/bg1.png" />
+      </div>
+      <div class="box i">
+        <img src="../assets/bg1.png" />
+      </div>
+      <div class="box j">
+        <img src="../assets/bg1.png" />
+      </div>
+    </div>
+  </body>
+</html>
