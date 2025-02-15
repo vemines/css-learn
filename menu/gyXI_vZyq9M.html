@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Hover</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        font-family: sans-serif;
+        background: #ffff61;
+      }
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+      }
+      a {
+        text-decoration: none;
+        color: #262626;
+        position: relative;
+        width: 160px;
+        height: 50px;
+        display: block;
+        line-height: 50px;
+        text-align: center;
+        transition: 0.35s;
+        transition-delay: 0.15s;
+        font-size: 24px;
+        font-weight: 500;
+        border: 2px solid #262626;
+      }
+      a:hover {
+        color: #fff;
+      }
+      a span {
+        position: absolute;
+        width: 25%;
+        height: 100%;
+        background: #262626;
+        z-index: -1;
+        transform-origin: bottom;
+        transform: scaleY(0);
+        transition: 0.5s;
+      }
+      a:hover span {
+        transform: scaleY(1);
+      }
+      a span:nth-child(1) {
+        left: 0;
+      }
+      a span:nth-child(2) {
+        left: 25%;
+        transition-delay: 0.15s;
+      }
+      a span:nth-child(3) {
+        left: 50%;
+        transition-delay: 0.3s;
+      }
+      a span:nth-child(4) {
+        left: 75%;
+        transition-delay: 0.45s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navigation">
+      <ul>
+        <li>
+          <a href="#">
+            Home
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            About
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Services
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Portfolio
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Contact
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

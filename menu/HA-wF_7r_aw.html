@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sliding Social</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      ul {
+        list-style: none;
+        display: flex;
+      }
+      li {
+        border-right: 2px solid #fff;
+      }
+      a {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-decoration: none;
+        text-align: center;
+        transition: 0.5s;
+        color: #fff;
+      }
+      a:hover {
+        width: 140px;
+        justify-content: flex-start;
+      }
+      span {
+        font-size: 18px;
+        margin-left: 10px;
+      }
+      i {
+        min-width: 50px;
+        font-size: 26px;
+      }
+      li:nth-child(1) a {
+        background: #3b5999;
+      }
+      li:nth-child(2) a {
+        background: #55acee;
+      }
+      li:nth-child(3) a {
+        background: #dd4b39;
+      }
+      li:nth-child(4) a {
+        background: #0077b5;
+      }
+      li:nth-child(5) a {
+        background: #e4405f;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navigation">
+      <ul>
+        <li>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i><span>Facebook</span></a>
+        </li>
+        <li>
+          <a href="#"><i class="fa-brands fa-twitter"></i><span>Twitter</span></a>
+        </li>
+        <li>
+          <a href="#"><i class="fa-brands fa-google"></i><span>Google</span></a>
+        </li>
+        <li>
+          <a href="#"><i class="fa-brands fa-linkedin"></i><span>Linkedin</span></a>
+        </li>
+        <li>
+          <a href="#"><i class="fa-brands fa-instagram"></i><span>Instagram</span></a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
