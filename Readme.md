@@ -6,3 +6,5 @@ File name is id of link youtube video.
 Ex: https://www.youtube.com/watch?v=FILE_NAME
 
 File name with ⭐ is have some modify
+
+Test on chrome: 1920x1080 125%
