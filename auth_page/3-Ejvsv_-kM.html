@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #edf1f4;
+      }
+      .login {
+        position: relative;
+        width: 380px;
+        padding: 80px 50px 50px;
+        box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1), -15px -15px 20px #fffb;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+      }
+      form {
+        position: relative;
+        width: 100%;
+      }
+      h2 {
+        font-size: 48px;
+        margin-bottom: 30px;
+        line-height: 35px;
+      }
+      h2 span {
+        font-weight: 300;
+        font-size: 30px;
+      }
+      .inputBox {
+        position: relative;
+        display: flex;
+      }
+      input {
+        border: none;
+        outline: none;
+        background: transparent;
+      }
+      .inputBox input {
+        border-radius: 10px;
+        font-size: 1em;
+        width: 100%;
+        padding: 15px 20px;
+        padding-left: 40px;
+        margin-bottom: 20px;
+        box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1), inset -5px -5px 10px #fff;
+      }
+      i {
+        position: absolute;
+        left: 15px;
+        top: 25%;
+      }
+      label {
+        display: flex;
+        align-items: center;
+      }
+      input[type='checkbox'] {
+        margin-right: 5px;
+        scale: 1.2;
+      }
+      input[type='submit'] {
+        margin-top: 20px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px #fff;
+        width: 100%;
+        padding: 15px 20px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 14px;
+      }
+      input[type='submit']:focus {
+        box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1), inset -5px -5px 10px #fff;
+      }
+      .fingerprint {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 15px;
+        cursor: pointer;
+      }
+      .fingerprintBox {
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px #fff;
+        border: 3px solid#edf1f4;
+        padding: 15px 20px 10px;
+        border-radius: 10px;
+        background: linear-gradient(315deg, #03a0f4, #0082bc);
+      }
+      img {
+        max-width: 40px;
+        filter: invert(1);
+        animation: animate 1s linear infinite;
+      }
+      @keyframes animate {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+      }
+      .fingerprint p {
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login">
+      <form>
+        <h2>Hello!<br /><span>welcome Back!</span></h2>
+        <div class="inputBox">
+          <input type="text" placeholder="Username" />
+          <i cLass="fa-solid fa-user"></i>
+        </div>
+        <div class="inputBox">
+          <input type="password" placeholder="Password" />
+          <i cLass="fa-solid fa-lock"></i>
+        </div>
+        <label> <input type="checkbox" />Keep me logged in </label>
+        <input type="submit" value="Log in" />
+      </form>
+      <h4>0R</h4>
+      <div class="fingerprint">
+        <div class="fingerprintBox">
+          <img src="../assets/fingerprint.png" />
+        </div>
+        <p>Login with fingerprint</p>
+      </div>
+    </div>
+  </body>
+</html>
