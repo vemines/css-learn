@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+      }
+      body {
+        min-height: 100vh;
+        background-color: #0002be;
+        transition: 0.5s;
+      }
+      a {
+        text-decoration: none;
+      }
+      ul {
+        list-style: none;
+      }
+      header {
+        position: absolute;
+        width: 100%;
+        padding: 20px 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1;
+      }
+      .logo {
+        position: relative;
+        max-width: 80px;
+      }
+      header ul {
+        display: flex;
+        list-style: none;
+        gap: 40px;
+      }
+      header li a {
+        color: #fff;
+        user-select: none;
+        font-size: 20px;
+      }
+      .content {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+        padding: 20px 100px;
+      }
+      .content .text {
+        position: relative;
+        max-width: 600px;
+        margin-right: 30px;
+      }
+      .content h2 {
+        font-size: 70px;
+        line-height: 100px;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+      .content h2 span {
+        font-size: 35px;
+      }
+      .content a {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 8px 20px;
+        background-color: #fff;
+        color: #111;
+        border-radius: 40px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+      .content .image {
+        width: 600px;
+        display: flex;
+        justify-content: center;
+      }
+      .content .image img {
+        width: 260px;
+      }
+      .thumb {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 50px;
+      }
+      .thumb li {
+        cursor: pointer;
+        transition: 0.5s;
+      }
+      .thumb li:hover {
+        transform: translateY(-15px);
+      }
+      .thumb img {
+        max-width: 40px;
+      }
+      .social {
+        position: absolute;
+        top: 50%;
+        right: 30px;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+      .social li {
+        cursor: pointer;
+      }
+      .social i {
+        font-size: 30px;
+        color: #fff;
+      }
+
+      @media (max-width: 991px) {
+        header,
+        .content {
+          padding: 20px 40px;
+        }
+        header .logo {
+          max-width: 60px;
+        }
+        header ul {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #fff;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 20px;
+          transition: 0.2s, visibility 0s;
+          opacity: 0;
+          visibility: hidden;
+        }
+        header ul.active {
+          opacity: 1;
+          visibility: visible;
+        }
+        header li a {
+          color: #111;
+          font-size: 30px;
+          font-weight: 400;
+        }
+        header li:hover a {
+          color: #ed0223;
+        }
+        .content h2 {
+          line-height: 1;
+          margin-bottom: 30px;
+          font-size: 35px;
+        }
+        .toggle {
+          position: relative;
+          font-size: 30px;
+          color: #fff;
+          z-index: 2;
+          cursor: pointer;
+        }
+        .toggle::before {
+          content: '\f0c9';
+          font-family: 'FontAwesome';
+          transition: 0.2s;
+        }
+        .toggle.active {
+          color: #111;
+        }
+        .toggle.active::before {
+          content: '\f00d';
+          font-family: 'FontAwesome';
+        }
+        .content {
+          flex-direction: column;
+          align-items: flex-start;
+          top: 100px;
+        }
+        .content .text {
+          margin-right: 60px;
+        }
+        .content .image {
+          align-self: center;
+          margin-top: 30px;
+        }
+        .content .image img {
+          width: 160px;
+          padding: 10px 0;
+        }
+        .thumb {
+          position: relative;
+          margin-top: 80px;
+        }
+        .social {
+          right: 10;
+          background-color: rgba(0, 0, 0, 0.2);
+          width: 50px;
+          gap: 0;
+          text-align: center;
+        }
+        .social li {
+          padding: 10px;
+        }
+        .social li:not(:last-child) {
+          border-bottom: 2px solid #fff;
+          padding: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="#"><img src="../assets/pepsi-logo.png" class="logo" /></a>
+      <div class="toggle"><i></i></div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">What's New</a></li>
+        <li><a href="#">Newsletter</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </header>
+    <div class="content">
+      <div class="text">
+        <h2>Lorem <span>ipsum dolor</span></h2>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime id error, et, tempore
+          minus pariatur velit eos laudantium inventore explicabo distinctio fugiat nam atque ex hic
+          voluptatibus laborum nihil veritatis.
+        </p>
+        <a href="#">View All Product</a>
+      </div>
+      <div class="image">
+        <img src="../assets/pepsi-1.png" class="pepsi" />
+      </div>
+
+      <ul class="thumb">
+        <li>
+          <img
+            src="../assets/pepsi-1.png"
+            onclick="imgslider('../assets/pepsi-1.png');changeBgColor('#0062be')"
+          />
+        </li>
+        <li>
+          <img
+            src="../assets/pepsi-2.png"
+            onclick="imgslider('../assets/pepsi-2.png');changeBgColor('#e60c2c')"
+          />
+        </li>
+        <li>
+          <img
+            src="../assets/pepsi-3.png"
+            onclick="imgslider('../assets/pepsi-3.png');changeBgColor('#1e1e1e')"
+          />
+        </li>
+      </ul>
+    </div>
+
+    <ul class="social">
+      <li><i class="fa-brands fa-facebook-f"></i></li>
+      <li><i class="fa-brands fa-twitter"></i></li>
+      <li><i class="fa-brands fa-instagram"></i></li>
+    </ul>
+    <script>
+      function imgslider(anything) {
+        document.querySelector('.pepsi').src = anything;
+      }
+      function changeBgColor(color) {
+        document.body.style.backgroundColor = color;
+      }
+      const toggle = document.querySelector('.toggle');
+      toggle.addEventListener('click', function () {
+        const menu = document.querySelector('header ul');
+        menu.classList.toggle('active');
+        this.classList.toggle('active');
+      });
+    </script>
+  </body>
+</html>

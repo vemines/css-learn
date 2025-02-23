@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rating</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #333;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+      }
+      .rating {
+        position: relative;
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 4px;
+        padding: 30px 40px;
+        border-radius: 30px;
+        background-color: #353535;
+        box-shadow: 30px 30px 30px -10px rgba(0, 0, 0, 0.5),
+          inset 15px 15px 3px rgba(255, 255, 255, 0.1), -4px -4px 15px rgba(255, 255, 255, 0.1),
+          inset -2px -2px 12px rgba(0, 0, 0, 0.75);
+      }
+      input {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        cursor: pointer;
+        appearance: none;
+      }
+      input::before {
+        content: '\f005';
+        font-family: fontAwesome;
+        font-size: 34px;
+        color: #111;
+        transition: 0.5s;
+      }
+      input:hover ~ input::before,
+      input:hover::before,
+      input:checked ~ input::before,
+      input:checked::before {
+        color: var(--color);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="rating">
+        <input type="radio" name="star1" style="--color: #ff9933" />
+        <input type="radio" name="star1" style="--color: #ff9933" />
+        <input type="radio" name="star1" style="--color: #ff9933" />
+        <input type="radio" name="star1" style="--color: #ff9933" />
+        <input type="radio" name="star1" style="--color: #ff9933" />
+        <input type="radio" name="star1" style="--color: #ff9933" />
+        <input type="radio" name="star1" style="--color: #ff9933" />
+        <input type="radio" name="star1" style="--color: #ff9933" />
+        <input type="radio" name="star1" style="--color: #ff9933" />
+        <input type="radio" name="star1" style="--color: #ff9933" />
+      </div>
+      <div class="rating">
+        <input type="radio" name="star2" style="--color: #ffffff" />
+        <input type="radio" name="star2" style="--color: #ffffff" />
+        <input type="radio" name="star2" style="--color: #ffffff" />
+        <input type="radio" name="star2" style="--color: #ffffff" />
+        <input type="radio" name="star2" style="--color: #ffffff" />
+        <input type="radio" name="star2" style="--color: #ffffff" />
+        <input type="radio" name="star2" style="--color: #ffffff" />
+        <input type="radio" name="star2" style="--color: #ffffff" />
+        <input type="radio" name="star2" style="--color: #ffffff" />
+        <input type="radio" name="star2" style="--color: #ffffff" />
+      </div>
+      <div class="rating">
+        <input type="radio" name="star3" style="--color: #2ae418" />
+        <input type="radio" name="star3" style="--color: #2ae418" />
+        <input type="radio" name="star3" style="--color: #2ae418" />
+        <input type="radio" name="star3" style="--color: #2ae418" />
+        <input type="radio" name="star3" style="--color: #2ae418" />
+        <input type="radio" name="star3" style="--color: #2ae418" />
+        <input type="radio" name="star3" style="--color: #2ae418" />
+        <input type="radio" name="star3" style="--color: #2ae418" />
+        <input type="radio" name="star3" style="--color: #2ae418" />
+        <input type="radio" name="star3" style="--color: #2ae418" />
+      </div>
+    </div>
+  </body>
+</html>

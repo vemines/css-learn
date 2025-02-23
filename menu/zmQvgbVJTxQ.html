@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toogle Social Menu</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #262626;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      .share {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        transition: 0.5s;
+        background-color: #fff;
+      }
+      .share.active {
+        width: 300px;
+        height: 260px;
+        border-radius: 10px;
+      }
+      .toggle {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 50px;
+        background-color: #ff0057;
+        border-radius: 50%;
+        transition: 0.5s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .share.active .toggle {
+        bottom: -25px;
+      }
+      .toggle::before {
+        content: '\f1e0';
+        font-family: 'FontAwesome';
+        color: #fff;
+        font-size: 22px;
+      }
+      .share.active .toggle::before {
+        content: '\f00d';
+        font-family: 'FontAwesome';
+        color: #fff;
+        font-size: 22px;
+      }
+      ul {
+        width: 100%;
+        scale: 0;
+        overflow: hidden;
+      }
+      .share.active ul {
+        scale: 1;
+        transition: 0.5s;
+        transition-delay: 0.2s;
+      }
+      li a {
+        display: block;
+        padding: 10px 20px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        user-select: none;
+        text-transform: uppercase;
+        font-family: sans-serif;
+
+        color: #262626;
+
+        transition: 0.5s;
+      }
+      li:hover a {
+        color: #fff;
+        background-color: #202020;
+        transform: scale(1.05) translateY(-5px);
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+      }
+      .fa-brands {
+        width: 24px;
+        height: 24px;
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        line-height: 24px;
+        margin-right: 15px;
+      }
+      li:nth-child(1) a .fa-brands,
+      li:nth-child(1):hover a {
+        background-color: #3b5999;
+      }
+      li:nth-child(2) a .fa-brands,
+      li:nth-child(2):hover a {
+        background-color: #1da1f2;
+      }
+      li:nth-child(3) a .fa-brands,
+      li:nth-child(3):hover a {
+        background-color: #cd201f;
+      }
+      li:nth-child(4) a .fa-brands,
+      li:nth-child(4):hover a {
+        background-color: #0a66c2;
+      }
+      li:nth-child(5) a .fa-brands,
+      li:nth-child(5):hover a {
+        background-color: #e4405f;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="share active">
+      <div class="toggle"></div>
+      <ul>
+        <li>
+          <a href="#"> <i class="fa-brands fa-facebook-f"></i>Facebook </a>
+        </li>
+        <li>
+          <a href="#"> <i class="fa-brands fa-twitter"></i>Twitter </a>
+        </li>
+        <li>
+          <a href="#"> <i class="fa-brands fa-google"></i>Google </a>
+        </li>
+        <li>
+          <a href="#"> <i class="fa-brands fa-linkedin"></i>Linkedin </a>
+        </li>
+        <li>
+          <a href="#"> <i class="fa-brands fa-instagram"></i>Instagram </a>
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    const share = document.querySelector('.share');
+    const toggle = document.querySelector('.toggle');
+
+    toggle.addEventListener('click', function () {
+      share.classList.toggle('active');
+    });
+  </script>
+</html>
