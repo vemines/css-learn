@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animate Circle Process</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', serif;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #222;
+      }
+      .container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 40px;
+      }
+      .card {
+        position: relative;
+        width: 220px;
+        height: 250px;
+        background-color: #2a2a2a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .percent,
+      svg {
+        position: relative;
+        width: 150px;
+        height: 150px;
+      }
+      svg {
+        rotate: 270deg;
+      }
+      circle {
+        width: 100%;
+        height: 100%;
+        fill: transparent;
+        stroke-width: 2;
+        stroke: #191919;
+        transform: translate(5px, 5px);
+      }
+      circle:nth-child(2) {
+        stroke: var(--color);
+        stroke-dasharray: 440;
+        stroke-dashoffset: calc(440 - (440 * var(--percent)) / 100);
+        animation: fadeIn 1s linear forwards;
+        animation-delay: 2.5s;
+        opacity: 0;
+      }
+      .dot {
+        position: absolute;
+        inset: 5px;
+        z-index: 1;
+        animation: animateDot 2s linear forwards;
+      }
+      @keyframes animateDot {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(calc(3.6deg * var(--percent)));
+        }
+      }
+      .dot::before {
+        content: '';
+        position: absolute;
+        top: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--color);
+      }
+      .number {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: #fff;
+        animation: fadeIn 1s linear forwards;
+        animation-delay: 2.5s;
+        opacity: 0;
+      }
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      h2 {
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        font-size: 40px;
+      }
+      h2 span {
+        font-size: 20px;
+        margin-left: 3px;
+      }
+      p {
+        font-weight: 300;
+        font-size: 13px;
+        letter-spacing: 2px;
+        margin-top: 5px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.75);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="percent" style="--color: #04fc43; --percent: 85">
+          <div class="dot"></div>
+          <svg>
+            <circle cx="70" cy="70" r="70"></circle>
+            <circle cx="70" cy="70" r="70"></circle>
+          </svg>
+          <div class="number">
+            <h2>85<span>%</span></h2>
+            <p>Html</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="percent" style="--color: #06ccff; --percent: 63">
+          <div class="dot"></div>
+          <svg>
+            <circle cx="70" cy="70" r="70"></circle>
+            <circle cx="70" cy="70" r="70"></circle>
+          </svg>
+          <div class="number">
+            <h2>63<span>%</span></h2>
+            <p>CSS</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="percent" style="--color: #fee800; --percent: 91">
+          <div class="dot"></div>
+          <svg>
+            <circle cx="70" cy="70" r="70"></circle>
+            <circle cx="70" cy="70" r="70"></circle>
+          </svg>
+          <div class="number">
+            <h2>91<span>%</span></h2>
+            <p>Javascript</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="percent" style="--color: #ff00be; --percent: 78">
+          <div class="dot"></div>
+          <svg>
+            <circle cx="70" cy="70" r="70"></circle>
+            <circle cx="70" cy="70" r="70"></circle>
+          </svg>
+          <div class="number">
+            <h2>78<span>%</span></h2>
+            <p>Flutter</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
