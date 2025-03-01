@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll Process Bar</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      section {
+        height: 400vh;
+        background: #000;
+      }
+      ::-webkit-scrollbar {
+        width: 0;
+      }
+      .scrollBar,
+      .scrollBar::before,
+      .scrollBar::after {
+        top: 0;
+        right: 0;
+        width: 10px;
+        background: linear-gradient(to top, #008aff, #00ffe7);
+      }
+      .scrollBar {
+        position: fixed;
+        min-height: 4%;
+        animation: animate 5s linear infinite;
+      }
+      .scrollBar::before,
+      .scrollBar::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+      }
+      .scrollBar::before {
+        filter: blur(10px);
+      }
+      .scrollBar::after {
+        filter: blur(20px);
+      }
+      @keyframes animate {
+        0%,
+        100% {
+          filter: hue-rotate(0deg);
+        }
+        50% {
+          filter: hue-rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="scrollBar"></div>
+    <section></section>
+    <script>
+      let scrollBar = document.querySelector('.scrollBar');
+      let totalHeight = document.body.scrollHeight - window.innerHeight;
+
+      window.onscroll = function () {
+        let progressHeight = (window.pageYOffset / totalHeight) * 100;
+        scrollBar.style.height = progressHeight + '%';
+      };
+    </script>
+  </body>
+</html>
