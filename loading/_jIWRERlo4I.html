@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4 Dot Animation</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #262626;
+      }
+      .loading {
+        width: 120px;
+        height: 120px;
+        position: relative;
+      }
+      span {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+      span:nth-child(1) {
+        background-color: #fff900;
+        box-shadow: 0 0 25px #fff900;
+        animation: animate 2s linear infinite;
+      }
+      span:nth-child(2) {
+        background-color: #08f828;
+        box-shadow: 0 0 25px #08f828;
+        animation: animate 2s linear infinite;
+        animation-delay: -0.5s;
+      }
+      span:nth-child(3) {
+        background-color: #ff005a;
+        box-shadow: 0 0 25px #ff005a;
+        animation: animate 2s linear infinite;
+        animation-delay: -1s;
+      }
+      span:nth-child(4) {
+        background-color: #3896ff;
+        box-shadow: 0 0 25px #3896ff;
+        animation: animate 2s linear infinite;
+        animation-delay: -1.5s;
+      }
+      @keyframes animate {
+        0% {
+          top: 0;
+          left: 0;
+        }
+        25% {
+          top: 0;
+          left: 100%;
+        }
+        50% {
+          top: 100%;
+          left: 100%;
+        }
+        55% {
+          top: 100%;
+          left: 100%;
+        }
+        75% {
+          top: 100%;
+          left: 0;
+        }
+        100% {
+          top: 0;
+          left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loading">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </body>
+</html>
