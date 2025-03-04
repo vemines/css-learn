@@ -24,3 +24,6 @@ font-family: 'Noto Serif Telugu', serif;
 
 @import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap');
 font-family: "Just Another Hand", serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+font-family: "Montserrat", sans-serif;

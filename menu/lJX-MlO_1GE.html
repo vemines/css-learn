@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hover Menu</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #262626;
+      }
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
+      a {
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 24px;
+        color: #fff;
+        position: relative;
+        padding: 20px;
+      }
+      span:first-child::before,
+      span:first-child::after,
+      span:last-child::before,
+      span:last-child::after {
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: transparent;
+        transition: 0.5s;
+        opacity: 0;
+      }
+      li:hover span:first-child::before,
+      li:hover span:first-child::after,
+      li:hover span:last-child::before,
+      li:hover span:last-child::after {
+        opacity: 1;
+      }
+      li:hover span:first-child::before {
+        top: 0px;
+        left: 0px;
+      }
+      li:hover span:first-child::after {
+        top: 0px;
+        right: 0px;
+      }
+      li:hover span:last-child::before {
+        bottom: 0px;
+        left: 0px;
+      }
+      li:hover span:last-child::after {
+        bottom: 0px;
+        right: 0px;
+      }
+      span:first-child::before {
+        top: 15px;
+        left: 15px;
+        border-top: 2px solid #ff0;
+        border-left: 2px solid #ff0;
+      }
+      span:first-child::after {
+        top: 15px;
+        right: 15px;
+        border-top: 2px solid #ff0;
+        border-right: 2px solid #ff0;
+      }
+      span:last-child::before {
+        bottom: 15px;
+        left: 15px;
+        border-bottom: 2px solid #ff0;
+        border-left: 2px solid #ff0;
+      }
+      span:last-child::after {
+        bottom: 15px;
+        right: 15px;
+        border-bottom: 2px solid #ff0;
+        border-right: 2px solid #ff0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navigation">
+      <ul>
+        <li>
+          <a href="#">Home<span></span><span></span></a>
+        </li>
+        <li>
+          <a href="#">About<span></span><span></span></a>
+        </li>
+        <li>
+          <a href="#">Services<span></span><span></span></a>
+        </li>
+        <li>
+          <a href="#">Portfolio<span></span><span></span></a>
+        </li>
+        <li>
+          <a href="#">Contact<span></span><span></span></a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

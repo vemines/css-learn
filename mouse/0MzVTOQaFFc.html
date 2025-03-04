@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Icon Hover</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #262626;
+      }
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+        overflow: hidden;
+      }
+      li {
+        width: 100px;
+        height: 100px;
+        background-color: #fff;
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        transition: 0.5s ease-in-out;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      li::before,
+      li::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        top: 0;
+        transition: 0.3s ease-in-out;
+      }
+      li::before {
+        width: 100%;
+        left: 0;
+        z-index: -1;
+        transform: scale(0);
+        border-radius: 50%;
+      }
+      li:hover::before {
+        transform: scale(0.9);
+      }
+      li:nth-child(1):before {
+        background-color: #1877f2;
+      }
+      li:nth-child(2):before {
+        background-color: #1da1f2;
+      }
+      li:nth-child(3):before {
+        background-color: #e4405f;
+      }
+      li:nth-child(4):before {
+        background-color: #0a66c2;
+      }
+      li::after {
+        left: 100%;
+        width: 50%;
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+      li:hover::after {
+        left: 50%;
+        transition-delay: 0.3s;
+      }
+      i {
+        font-size: 40px;
+        transition: 0.3s ease-in-out;
+      }
+      li:hover i {
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li><i class="fa-brands fa-facebook-f"></i></li>
+      <li><i class="fa-brands fa-twitter"></i></li>
+      <li><i class="fa-brands fa-instagram"></i></li>
+      <li><i class="fa-brands fa-linkedin"></i></li>
+    </ul>
+  </body>
+</html>
