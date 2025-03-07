@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll Down Animation</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #262626;
+      }
+      .circle {
+        border: 2px solid #fff;
+        border-radius: 50%;
+        width: 250px;
+        height: 250px;
+        text-align: center;
+        line-height: 250px;
+        font-size: 150px;
+        overflow: hidden;
+        color: #fff;
+        position: relative;
+      }
+      .circle::before {
+        content: 'SCROLL DOWN';
+        position: absolute;
+        color: #fff;
+        font-family: arial;
+        font-size: 20px;
+        bottom: -75px;
+        left: 50px;
+      }
+      i {
+        animation: animate 1.5s linear infinite;
+      }
+      @keyframes animate {
+        0% {
+          transform: translateY(-100px);
+          text-shadow: 0 100px 0 #fff;
+        }
+        25% {
+          transform: translateY(0px);
+          text-shadow: 0 60px 0 #fff;
+        }
+        50% {
+          transform: translateY(0px);
+          text-shadow: 0 40px 0 #fff;
+        }
+        75% {
+          transform: translateY(0px);
+          text-shadow: 0 60px 0 #fff;
+        }
+        100% {
+          transform: translateY(100px);
+          text-shadow: 0 100px 0 #fff;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="circle">
+      <i class="fa-solid fa-angle-down"></i>
+    </div>
+  </body>
+</html>

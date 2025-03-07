@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Slider</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      section {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+      }
+      video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .nav {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+      }
+      .nav img {
+        width: 150px;
+        border: 3px solid #fff;
+        cursor: pointer;
+        opacity: 0.7;
+      }
+      .nav img:hover {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <video id="slider" src="../assets/video3.webm" autoplay></video>
+      <div class="nav">
+        <img onclick="changeVideo('../assets/video3.webm')" src="../assets/video3.jpg" />
+        <img onclick="changeVideo('../assets/video4.webm')" src="../assets/video4.jpg" />
+        <img onclick="changeVideo('../assets/video1.mp4')" src="../assets/video1.jpg" />
+        <img onclick="changeVideo('../assets/video2.mp4')" src="../assets/video2.jpg" />
+      </div>
+    </section>
+    <script>
+      function changeVideo(url) {
+        document.getElementById('slider').src = url;
+      }
+    </script>
+  </body>
+</html>

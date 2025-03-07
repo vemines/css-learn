@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Square Animate</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow: hidden;
+      }
+      body::after,
+      video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+      body::after {
+        content: '';
+        background: linear-gradient(#fff 55%, #2196f3);
+        mix-blend-mode: soft-light;
+      }
+      video {
+        object-fit: cover;
+        z-index: 1;
+        mix-blend-mode: difference;
+      }
+      .track {
+        width: 150px;
+        height: 50px;
+        background: transparent;
+        border-bottom: 2px solid #202020;
+        position: relative;
+        transition: 2s;
+      }
+      .track:hover {
+        scale: 5;
+      }
+      .track::before {
+        content: '';
+        position: absolute;
+        top: 50px;
+        width: 100%;
+        height: 50vh;
+        background-color: #359dea;
+      }
+      .square {
+        position: absolute;
+        top: 50%;
+        width: 50px;
+        height: 50px;
+        background-color: #63b2ed;
+        border: 4px solid #202020;
+      }
+      .square:first-child {
+        left: 0;
+        transform-origin: bottom right;
+        animation: animate 1s ease-out infinite;
+      }
+      .square:last-child {
+        right: 0;
+        transform-origin: bottom left;
+        animation: animate2 1s ease-out infinite;
+        animation-delay: -0.5s;
+      }
+      @keyframes animate {
+        0% {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        50% {
+          transform: translate(-50%, -50%) rotate(90deg);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(90deg) translateY(25px);
+        }
+      }
+      @keyframes animate2 {
+        0% {
+          transform: translate(50%, -50%) rotate(0deg);
+        }
+        50% {
+          transform: translate(50%, -50%) rotate(-90deg);
+        }
+        100% {
+          transform: translate(50%, -50%) rotate(-90deg) translateY(25px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <video src="../assets/rain.mp4" loop autoplay muted></video>
+    <div class="track">
+      <div class="square"></div>
+      <div class="square"></div>
+    </div>
+  </body>
+</html>
