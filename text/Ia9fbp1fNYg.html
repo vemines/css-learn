@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flying Text Animation</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #130e23;
+        overflow: hidden;
+      }
+      .text {
+        position: relative;
+        text-align: center;
+        color: #00cefe;
+        max-width: 650px;
+      }
+      span {
+        position: relative;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p class="text">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque corporis facilis a
+        recusandae molestias! Necessitatibus aperiam libero at quae dignissimos doloremque cumque
+        quo quis minima laudantium corrupti, quod cum. Inventore.Lorem ipsum dolor sit amet
+        consectetur, adipisicing elit. Eaque corporis facilis a recusandae molestias! Necessitatibus
+        aperiam libero at quae dignissimos doloremque cumque quo quis minima laudantium corrupti,
+        quod cum. Inventore.
+      </p>
+    </div>
+    <script src="../assets/js/anime.min.js"></script>
+    <script>
+      const text = document.querySelector('.text');
+      text.innerHTML = text.textContent.replace(/\S/g, '<span>$&</span>');
+      const animation = anime.timeline({
+        targets: '.text span',
+        easing: 'easeInOutExpo',
+        // loop: true,
+      });
+
+      animation
+        .add({
+          rotate: () => anime.random(-360, 360),
+          translateX: () => anime.random(-500, 500),
+          translateY: () => anime.random(-500, 500),
+          duration: 5000,
+          delay: anime.stagger(20),
+        })
+        .add({
+          rotate: 0,
+          translateX: 0,
+          translateY: 0,
+          duration: 5000,
+          delay: anime.stagger(20),
+        });
+    </script>
+  </body>
+</html>

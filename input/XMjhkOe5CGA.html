@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Row Dropdown</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #ccc;
+        background-image: url(../assets/bg3.png);
+        background-size: cover;
+      }
+      .container {
+        position: relative;
+        padding: 20px 0 20px 60px;
+        min-height: 60px;
+        width: 80%;
+        box-sizing: border-box;
+        background: #fff;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        align-items: center;
+        border-radius: 8px;
+      }
+      .search {
+        position: absolute;
+        top: 30px;
+        left: 20px;
+        font-size: 30px;
+        color: #adadad;
+      }
+      .row {
+        display: flex;
+        width: 100%;
+      }
+      .option {
+        flex: 1;
+        position: relative;
+        width: 100%;
+        border-right: 1px solid #ccc;
+        cursor: pointer;
+      }
+      select {
+        position: relative;
+        border: none;
+        outline: none;
+        font-size: 24px;
+        color: #848484;
+        padding: 10px 20px;
+        appearance: none;
+        width: 100%;
+      }
+      .option:not(:last-child):before {
+        content: '\f107';
+        font-family: 'FontAwesome';
+        position: absolute;
+        z-index: 1;
+        color: #848484;
+        right: 10px;
+        top: 15px;
+        font-size: 20px;
+        pointer-events: none;
+      }
+      .option:last-child {
+        padding: 0 20px;
+      }
+      input {
+        background: #23cbff;
+        color: #fff;
+        height: 100%;
+        width: 100%;
+        text-transform: uppercase;
+        outline: none;
+        border: none;
+        font-size: 24px;
+        border-radius: 6px;
+      }
+      input:hover {
+        background-color: #ff2368;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="search">
+        <i class="fa-solid fa-search"></i>
+      </div>
+      <form>
+        <div class="row">
+          <div class="option">
+            <select>
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+              <option>Option 4</option>
+            </select>
+          </div>
+          <div class="option">
+            <select>
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+              <option>Option 4</option>
+            </select>
+          </div>
+          <div class="option">
+            <select>
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+              <option>Option 4</option>
+            </select>
+          </div>
+          <div class="option">
+            <select>
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+              <option>Option 4</option>
+            </select>
+          </div>
+          <div class="option"><input type="submit" /></div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
