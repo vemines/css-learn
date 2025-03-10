@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sticky Toggle Menu</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .navigation {
+        position: fixed;
+        right: 0;
+      }
+      .toggle {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+        z-index: 1;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .toggle.active {
+        background-color: #e33737;
+      }
+      .toggle span {
+        position: absolute;
+        width: 30px;
+        height: 4px;
+        background-color: #000;
+        transition: 0.3s, box-shadow 0s;
+      }
+      .toggle span:first-child {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 0 #000;
+      }
+      .toggle span:last-child {
+        transform: translateY(10px);
+      }
+      .toggle.active span:first-child {
+        transform: rotate(45deg);
+        box-shadow: none;
+        background-color: #fff;
+      }
+      .toggle.active span:last-child {
+        transform: rotate(-45deg);
+        background-color: #fff;
+      }
+      ul {
+        display: flex;
+        list-style: none;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        position: relative;
+        right: 50px;
+        overflow: hidden;
+        top: 0;
+        transition: 0.5s;
+      }
+      .toggle.active ~ ul {
+        right: -100%;
+      }
+      li a {
+        text-decoration: none;
+        display: block;
+        height: 50px;
+        line-height: 50px;
+        padding: 0 30px;
+        color: #fff;
+        transition: 0.5s;
+      }
+      li a:hover {
+        background-color: #e33737;
+      }
+      .image {
+        height: 100vh;
+        width: 100%;
+      }
+      .image {
+        background-image: url(../assets/bg3.png);
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navigation">
+      <div class="toggle">
+        <span></span>
+        <span></span>
+      </div>
+      <ul>
+        <li>
+          <a href="#"><span>Home</span></a>
+        </li>
+        <li>
+          <a href="#"><span>About</span></a>
+        </li>
+        <li>
+          <a href="#"><span>Services</span></a>
+        </li>
+        <li>
+          <a href="#"><span>Portfolio</span></a>
+        </li>
+        <li>
+          <a href="#"><span>Contact</span></a>
+        </li>
+      </ul>
+    </div>
+    <div class="image"></div>
+    <div class="image"></div>
+    <script>
+      const toggle = document.querySelector('.toggle');
+      toggle.addEventListener('click', function () {
+        this.classList.toggle('active');
+      });
+    </script>
+  </body>
+</html>

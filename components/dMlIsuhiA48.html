@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Glowing Checkbox</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #060606;
+      }
+      ul {
+        display: flex;
+        list-style: none;
+        gap: 40px;
+      }
+      li {
+        text-align: center;
+      }
+      i {
+        font-size: 50px;
+        color: #222;
+        transition: 0.5s;
+      }
+      input {
+        display: none;
+      }
+      label {
+        cursor: pointer;
+      }
+      input:checked ~ i {
+        color: #00aaff;
+      }
+      .check {
+        position: relative;
+        display: block;
+        width: 120px;
+        height: 120px;
+        background: linear-gradient(#000, #333);
+        border-radius: 50%;
+        margin-top: 20px;
+      }
+      .check::before {
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: #161616;
+        transition: 0.5s;
+        z-index: 3;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .check::after {
+        content: '';
+        position: absolute;
+        inset: 16px;
+        background-color: #222;
+        border-radius: 50%;
+        z-index: 2;
+        border: 2px solid #161616;
+      }
+      input:checked ~ .check::before {
+        background-color: #00aaff;
+        box-shadow: 0 0 16px rgba(0, 170, 255, 1), 0 0 20px rgba(0, 170, 255, 1),
+          0 0 35px rgba(0, 170, 255, 1), 0 0 25px rgba(0, 170, 255, 1),
+          0 0 20px rgba(0, 170, 255, 1);
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>
+        <label>
+          <input type="checkbox" />
+          <i class="fa-solid fa-wifi"></i>
+          <span class="check"></span>
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="checkbox" />
+          <i class="fa-brands fa-bluetooth"></i>
+          <span class="check"></span>
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="checkbox" />
+          <i class="fa-solid fa-volume-high"></i>
+          <span class="check"></span>
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="checkbox" />
+          <i class="fa-solid fa-location-dot"></i>
+          <span class="check"></span>
+        </label>
+      </li>
+    </ul>
+  </body>
+</html>
