@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+    <script src="../assets/js/jquery.min.js"></script>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: consolas;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        min-height: 100vh;
+        overflow: hidden;
+      }
+      ul {
+        list-style: none;
+        display: flex;
+        margin: 0 8%;
+      }
+      a {
+        text-decoration: none;
+        font-size: 4em;
+        margin: 0 100px;
+        white-space: nowrap;
+        padding: 5px 20px;
+        transition: 0.5s;
+        color: #000;
+      }
+      li:hover a {
+        background-color: #000;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navigation">
+      <ul>
+        <li>
+          <a href="#"><span>Home</span></a>
+        </li>
+        <li>
+          <a href="#"><span>About</span></a>
+        </li>
+        <li>
+          <a href="#"><span>Services</span></a>
+        </li>
+        <li>
+          <a href="#"><span>Portfolio</span></a>
+        </li>
+        <li>
+          <a href="#"><span>Contact</span></a>
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      var docWidth = $('body').width(),
+        slidesWidth = $('ul').width(),
+        rangeX = slidesWidth - docWidth,
+        $images = $('ul');
+
+      $(document).on('mousemove', function (e) {
+        var mouseX = e.pageX,
+          offset = (mouseX / docWidth) * slidesWidth - mouseX / 2;
+
+        $images.css({
+          '-webkit-transform': 'translate3d(' + -offset + 'px,0,0)',
+          transform: 'translate3d(' + -offset + 'px,0,0)',
+        });
+      });
+    });
+  </script>
+</html>
