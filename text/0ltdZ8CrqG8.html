@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neon Text</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Quicksand', sans-serif;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #333;
+      }
+      h1 {
+        position: relative;
+        font-size: 6em;
+        color: #fff;
+        text-shadow: 0 0 20px #ff005b;
+        font-weight: 300;
+      }
+      h1::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        color: #ff005b;
+        filter: blur(15px);
+      }
+      h1::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #fe3a80;
+        z-index: -2;
+        opacity: 0.5;
+        filter: blur(40px);
+      }
+    </style>
+  </head>
+  <body>
+    <h1 data-text="[Neon_Light]">[Neon_Light]</h1>
+  </body>
+</html>

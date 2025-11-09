@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curtain Menu</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow: hidden;
+      }
+      .navigation > span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200%;
+        height: 100%;
+        display: block;
+        transform-origin: bottom left;
+        transition: 0.5s ease-in-out;
+      }
+      .navigation > span:nth-child(1) {
+        background: #ff1f6b;
+        transform: rotate(-90deg);
+        z-index: 1;
+        transition-delay: 0.4s;
+      }
+      .navigation > span:nth-child(2) {
+        background: #219dff;
+        transform: rotate(-90deg);
+        z-index: 2;
+        transition-delay: 0.2s;
+      }
+      .navigation > span:nth-child(3) {
+        background: #111;
+        transform: rotate(-90deg);
+        z-index: 3;
+        transition-delay: 0s;
+      }
+      .navigation.active > span:nth-child(1) {
+        transform: rotate(0deg);
+        transition-delay: 0s;
+      }
+      .navigation.active > span:nth-child(2) {
+        transform: rotate(0deg);
+        transition-delay: 0.2s;
+      }
+      .navigation.active > span:nth-child(3) {
+        transform: rotate(0deg);
+        transition-delay: 0.4s;
+      }
+      ul {
+        list-style: none;
+        position: relative;
+        z-index: 100;
+        transition: 0.5s;
+        display: none;
+        opacity: 0;
+      }
+      li {
+        margin: 10px 0;
+      }
+      a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 4em;
+        text-align: center;
+        font-family: consolas;
+      }
+      .navigation.active > ul {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+        transition-delay: 0.4s;
+      }
+      .toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        cursor: pointer;
+        transition: 0.5s;
+        font-family: fontAwesome;
+        font-size: 2em;
+      }
+      .toggle.active {
+        color: #fff;
+      }
+      .toggle::after {
+        content: '\f0c9';
+      }
+      .toggle.active::after {
+        content: '\f00d';
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+      <ul>
+        <li>
+          <a href="#"><span>Home</span></a>
+        </li>
+        <li>
+          <a href="#"><span>About</span></a>
+        </li>
+        <li>
+          <a href="#"><span>Services</span></a>
+        </li>
+        <li>
+          <a href="#"><span>Portfolio</span></a>
+        </li>
+        <li>
+          <a href="#"><span>Contact</span></a>
+        </li>
+      </ul>
+    </div>
+    <div class="toggle"></div>
+    <script>
+      const toggle = document.querySelector('.toggle');
+      toggle.addEventListener('click', function () {
+        const menu = document.querySelector('.navigation');
+        menu.classList.toggle('active');
+        this.classList.toggle('active');
+      });
+    </script>
+  </body>
+</html>
