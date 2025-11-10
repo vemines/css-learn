@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hover Fold Image</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #2f364f;
+      }
+      .box {
+        width: 640px;
+        height: 340px;
+        transform: rotate(-25deg) skew(25deg);
+        display: flex;
+        transition: 0.5s;
+      }
+      .box:hover {
+        transform: rotate(-25deg) skew(-25deg) translateY(-25px);
+      }
+      span {
+        width: 25%;
+        height: 100%;
+        background: #fff;
+        display: block;
+        pointer-events: none;
+        background: url(../assets/bg2.png);
+        background-size: 640px auto;
+        background-repeat: no-repeat;
+        background-position: calc(-160px * var(--i));
+        border-top: 5px solid #fff;
+        border-bottom: 5px solid #fff;
+        transition: 0.5s;
+      }
+      .box:hover span:nth-child(odd) {
+        transform: skewY(-25deg);
+        box-shadow: inset 20px 0 50px Elrgba(0, 0, 0, 0.5);
+      }
+      .box:hover span:nth-child(even) {
+        transform: skewY(25deg);
+      }
+      span:first-child {
+        border-left: 5px solid #fff;
+      }
+      span:last-child {
+        border-right: 5px solid #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <span style="--i: 0"></span>
+      <span style="--i: 1"></span>
+      <span style="--i: 2"></span>
+      <span style="--i: 3"></span>
+    </div>
+  </body>
+</html>

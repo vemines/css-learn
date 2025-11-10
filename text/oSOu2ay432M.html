@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Black And White Text Hover</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #262626;
+      }
+      .box {
+        position: relative;
+        cursor: none;
+      }
+      h1 {
+        text-transform: uppercase;
+        font-size: 4em;
+        z-index: 1;
+        color: #fff;
+        line-height: 100px;
+      }
+      .mask {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 100px;
+        height: 100px;
+        background: #fff;
+        mix-blend-mode: difference;
+        pointer-events: none;
+        transform: translateX(-50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h1>Lorem ipsum dolor sit</h1>
+      <div class="mask"></div>
+    </div>
+    <script>
+      document.querySelectorAll('.box').forEach((box) => {
+        box.addEventListener('mousemove', function (e) {
+          const rect = this.getBoundingClientRect();
+          const x_axis = e.clientX - rect.left;
+          const y_axis = e.clientY - rect.top;
+          const mask = this.querySelector('.mask');
+          if (mask) {
+            mask.style.left = x_axis + 'px';
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

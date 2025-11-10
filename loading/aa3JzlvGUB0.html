@@ -41,22 +41,16 @@
         height: 50%;
         background: rgba(255, 255, 255, 0.1);
         z-index: 10;
-
         pointer-events: none;
       }
       .loading::after {
         content: '';
-
         position: absolute;
         top: 27px;
-
         right: 20px;
-
         width: 10px;
-
         height: 10px;
         border-radius: 50%;
-
         animation: animateLight 1s linear infinite;
       }
       @keyframes animateLight {

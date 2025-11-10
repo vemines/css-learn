@@ -33,3 +33,6 @@ font-family: "Oswald", sans-serif;
 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 font-family: "Quicksand", sans-serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+font-family: "Dancing Script", cursive;

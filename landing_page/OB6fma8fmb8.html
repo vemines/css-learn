@@ -27,7 +27,6 @@
       .imgBx {
         position: relative;
         width: 450px;
-
         background: url(../assets/potrait3-1x2.jpg);
         background-size: cover;
       }
@@ -135,7 +134,6 @@
         const now = new Date();
         const currentYear = now.getFullYear();
         const currentMonth = now.getMonth();
-
         // If we're in January and past New Year, or any other month, target next year
         const targetYear =
           currentMonth === 0 &&
@@ -144,22 +142,17 @@
           now.getMinutes() === 0
             ? currentYear
             : currentYear + 1;
-
         document.getElementById('targetYear').innerText = targetYear;
-
         const countDate = new Date(`Jan 1, ${targetYear} 00:00:00`).getTime();
         gap = countDate - now;
-
         const second = 1000;
         const minute = second * 60;
         const hour = minute * 60;
         const day = hour * 24;
-
         const d = Math.floor(gap / day);
         const h = Math.floor((gap % day) / hour);
         const m = Math.floor((gap % hour) / minute);
         const s = Math.floor((gap % minute) / second);
-
         document.getElementById('days').innerText = d;
         document.getElementById('hours').innerText = h;
         document.getElementById('minutes').innerText = m;

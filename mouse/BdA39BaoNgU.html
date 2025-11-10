@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cursor Trails</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: #2e2c30;
+        overflow: hidden;
+        min-height: 100vh;
+        width: 100%;
+      }
+      .cursor {
+        position: absolute;
+        pointer-events: none;
+        left: 40px;
+      }
+      .cursor span {
+        position: absolute;
+        width: 15px;
+        height: 150px;
+        background: #fff;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        background-size: 300px 150px;
+        background-repeat: no-repeat;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cursor"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        let cursor = document.querySelector('.cursor');
+        const imagePath = '../assets/rect2-1x2-thing.jpg';
+        const numSlices = 20;
+        const sliceWidth = 15;
+        for (let i = 0; i < numSlices; i++) {
+          let span = document.createElement('span');
+          span.style.setProperty('--i', i + 1);
+          span.style.left = i * sliceWidth + 'px';
+          // Set background image for each span
+          span.style.backgroundImage = `url('${imagePath}')`;
+          // Position the background to show only this slice
+          span.style.backgroundPosition = `-${i * sliceWidth}px 0px`;
+          cursor.appendChild(span);
+        }
+        document.addEventListener('mousemove', (e) => {
+          gsap.to('span', {
+            x: e.clientX,
+            y: e.clientY,
+            stagger: 0.05,
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
