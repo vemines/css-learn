@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iphone 6 Css</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      .mobile {
+        position: relative;
+        width: 276px;
+        height: 555px;
+        background: #fff;
+        border-radius: 30px;
+        border: 2px solid rgba(0, 0, 0, 0.3);
+        box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
+      }
+      .screen {
+        position: relative;
+        background: #262626;
+        width: 256px;
+        height: 430px;
+        margin: 58px auto;
+        overflow: hidden;
+      }
+      .screen.active {
+        background: url(../assets/iphone6-screen.png);
+        background-size: cover;
+      }
+      .screen.active::before {
+        transform: none;
+      }
+      .screen::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(255, 255, 255, 0.1);
+        width: 100%;
+        height: 100%;
+        transform: SkewX(-5deg) translateX(-50%);
+      }
+      .home {
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #fff;
+        border: 2px solid #cecece;
+        cursor: pointer;
+        box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.1);
+      }
+      .inner {
+        position: absolute;
+        top: 32px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 4px;
+        border-radius: 2px;
+        background: #262626;
+      }
+      .inner:before {
+        content: '';
+        position: absolute;
+        top: -2px;
+
+        left: -22px;
+        background: #262626;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+      }
+      .inner::after {
+        content: '';
+        position: absolute;
+        top: -16px;
+
+        left: 50%;
+        transform: translateX(-50%);
+        background: #262626;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+      }
+      .volumn li,
+      .silent,
+      .sleep {
+        width: 6px;
+        background: #ccc;
+      }
+      .volumn {
+        position: absolute;
+        top: 90px;
+        left: -4px;
+        list-style: none;
+      }
+      .volumn li {
+        height: 30px;
+        margin: 10px 0;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+      }
+      .silent {
+        position: absolute;
+        top: 50px;
+        left: -4px;
+        height: 20px;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+      }
+      .sleep {
+        position: absolute;
+        top: 90px;
+        right: -4px;
+        height: 30px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mobile">
+      <div class="screen"></div>
+      <div class="home"></div>
+      <div class="inner"></div>
+      <ul class="volumn">
+        <li></li>
+        <li></li>
+      </ul>
+      <div class="silent"></div>
+      <div class="sleep"></div>
+    </div>
+    <script>
+      let home = document.querySelector('.home');
+      let screen = document.querySelector('.screen');
+
+      home.onclick = function () {
+        screen.classList.toggle('active');
+      };
+    </script>
+  </body>
+</html>
