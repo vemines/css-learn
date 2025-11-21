@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background Moving</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        overflow: hidden;
+        min-height: 100vh;
+      }
+      .container {
+        height: 100vh;
+        width: 120vw;
+        background: url(../assets/bg2.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container"></div>
+    <script>
+      function backgroundMove(element, options) {
+        var defaults = {
+          movementStrength: 50,
+        };
+
+        var settings = {};
+        for (var key in defaults) settings[key] = defaults[key];
+        for (var key in options) settings[key] = options[key];
+
+        var movementStrength = settings.movementStrength;
+        var height = movementStrength / window.innerHeight;
+        var width = movementStrength / window.innerWidth;
+
+        element.addEventListener('mousemove', function (e) {
+          var pageX = e.pageX - window.innerWidth / 2;
+          var pageY = e.pageY - window.innerHeight / 2;
+          var newvalueX = width * pageX * -1 - 25;
+          var newvalueY = height * pageY * -1 - 50;
+          element.style.backgroundPosition = newvalueX + 'px ' + newvalueY + 'px';
+        });
+      }
+
+      var container = document.querySelector('.container');
+      backgroundMove(container, { movementStrength: 50 });
+    </script>
+  </body>
+</html>

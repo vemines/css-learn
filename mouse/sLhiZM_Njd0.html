@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Hover</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Quicksand', sans-serif;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      h2 {
+        font-size: 6em;
+        text-align: center;
+      }
+      span {
+        position: relative;
+        display: inline-flex;
+        color: #414141;
+        overflow: hidden;
+        letter-spacing: -1em;
+        transition: 0.5s ease-in-out;
+      }
+      h2:hover span {
+        letter-spacing: 2px;
+      }
+      span:nth-of-type(1) {
+        color: #03a9f4;
+        letter-spacing: 0;
+        overflow: visible;
+      }
+      span:nth-of-type(1)::after {
+        content: '2';
+        position: absolute;
+        bottom: 0;
+        right: -10px;
+        font-size: 0.35em;
+      }
+      p {
+        position: relative;
+        font-size: 18px;
+        color: #777;
+        font-weight: 500;
+        line-height: 1em;
+        width: 800px;
+        text-align: center;
+      }
+      p::before {
+        content: 'Oxygen';
+        position: absolute;
+        transform: translateX(-65%);
+        top: 10px;
+        display: initial;
+        transition: content 0.5s;
+      }
+      h2:hover p:before {
+        content: 'Necessary for respiration in most living things';
+        transform: translateX(-50%);
+      }
+    </style>
+  </head>
+  <body>
+    <h2>
+      <span>O</span>
+      <span>xygen</span>
+      <br />
+      <p></p>
+    </h2>
+  </body>
+</html>

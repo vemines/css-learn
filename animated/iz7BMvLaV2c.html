@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bouncing Ball Animation</title>
+    <style>
+      body {
+        overflow: hidden;
+      }
+      marquee {
+        height: 100vh;
+      }
+      img {
+        max-width: 300px;
+        animation: animate 4s linear infinite;
+      }
+      @keyframes animate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <marquee behavior="alternate" scrollamount="40">
+      <marquee behavior="alternate" direction="down" scrollamount="30">
+        <img src="../assets/football.png" class="ball" />
+      </marquee>
+    </marquee>
+  </body>
+</html>

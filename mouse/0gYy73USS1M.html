@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Draggable Gooey</title>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        background: #fff;
+        filter: contrast(50);
+      }
+      .gooey span {
+        position: absolute;
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background: #000;
+        border-radius: 50%;
+        user-select: none;
+        cursor: grab;
+        filter: blur(25px);
+        animation: animate 5s linear infinite;
+      }
+      @keyframes animate {
+        0%,
+        100% {
+          margin: 10px;
+        }
+        50% {
+          margin: -50px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="gooey">
+        <span style="top: 20%; left: 30%"></span>
+        <span style="top: 30%; left: 50%"></span>
+        <span style="top: 50%; left: 65%"></span>
+        <span style="top: 40%; left: 45%"></span>
+        <span style="top: 60%; left: 22%"></span>
+        <span style="top: 70%; left: 79%"></span>
+      </div>
+    </section>
+
+    <script>
+      $(function () {
+        $('.gooey span').draggable();
+
+        const liList = document.querySelectorAll('.gooey span');
+        for (let i = 0; i < liList.length; i++) {
+          liList[i].style.animationDelay = -1 * (i + 1) + 's';
+        }
+      });
+    </script>
+  </body>
+</html>

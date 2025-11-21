@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typed Animated</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: #e91e63;
+      }
+      h1 {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        text-align: center;
+        font-family: sans-serif;
+        color: #fff;
+        font-size: 40px;
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="text"></h1>
+    <script src="../assets/js/typed.umd.js"></script>
+
+    <script>
+      var typed = new Typed('.text', {
+        strings: [
+          '<b>Lorem</b> sentence.',
+          'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+          'Exercitationem autem error alias hic laudantium eos',
+        ],
+        typeSpeed: 50,
+        backSpeed: 50,
+        loop: true,
+      });
+    </script>
+  </body>
+</html>

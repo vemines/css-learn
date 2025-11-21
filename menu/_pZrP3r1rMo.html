@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sticky Nav Menu</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', serif;
+      }
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        padding: 10px 100px;
+        box-sizing: border-box;
+        transition: 0.5s;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .nav.black {
+        background: rgba(0, 0, 0, 0.8);
+        height: 80px;
+        padding: 10px 50px;
+      }
+      .nav.black .logo {
+        height: 60px;
+      }
+      .logo {
+        float: left;
+      }
+      .logo img {
+        height: 80px;
+        transition: 0.5s;
+      }
+      ul {
+        list-style: none;
+        float: right;
+        display: flex;
+      }
+      a {
+        display: block;
+        color: #ccc;
+        padding: 10px 30px;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: 0.5s;
+      }
+      li:hover a,
+      li.active a {
+        background-color: #f00;
+        color: #fff;
+      }
+      section {
+        width: 100%;
+        height: 100vh;
+      }
+      section:nth-of-type(1) {
+        background: url(../assets/bg1.png);
+        background-size: cover;
+      }
+      section:nth-of-type(2) {
+        background: url(../assets/bg2.png);
+        background-size: cover;
+      }
+      .content {
+        padding: 100px;
+      }
+      h1 {
+        font-size: 36px;
+      }
+      p {
+        margin-top: 18px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <img src="../assets/pepsi-logo.png" class="logo" />
+      <ul>
+        <li class="active">
+          <a href="#"><span>Home</span></a>
+        </li>
+        <li>
+          <a href="#"><span>About</span></a>
+        </li>
+        <li>
+          <a href="#"><span>Services</span></a>
+        </li>
+        <li>
+          <a href="#"><span>Portfolio</span></a>
+        </li>
+        <li>
+          <a href="#"><span>Contact</span></a>
+        </li>
+      </ul>
+    </div>
+    <section></section>
+    <div class="content">
+      <h1>Lorem, ipsum dolor.</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum distinctio optio velit
+        asperiores ratione? Quos animi tempore obcaecati, quas aliquid voluptates corporis
+        aspernatur, laudantium cumque alias quisquam incidunt repudiandae ad! Lorem ipsum, dolor sit
+        amet consectetur adipisicing elit. Asperiores minus velit suscipit delectus beatae placeat.
+        Quis necessitatibus, nostrum asperiores ad fuga, nobis eos placeat reiciendis veritatis ea
+        iure inventore alias?
+      </p>
+    </div>
+    <section></section>
+    <script>
+      const nav = document.querySelector('.nav');
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 0) {
+          nav.classList.add('black');
+        } else {
+          nav.classList.remove('black');
+        }
+      });
+    </script>
+  </body>
+</html>

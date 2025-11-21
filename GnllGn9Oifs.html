@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drop Water Logo</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #eee;
+      }
+      .drop {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.05), 15px 25px 10px rgba(0, 0, 0, 0.05),
+          15px 20px 20px rgba(0, 0, 0, 0.05), inset -10px -10px 15px rgba(255, 255, 255, 0);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: scale(3);
+      }
+      .drop::before,
+      .drop::after {
+        content: '';
+        position: absolute;
+
+        border-radius: 50%;
+        background: #fff;
+      }
+      .drop::before {
+        top: 35px;
+        left: 25px;
+        width: 20px;
+        height: 20px;
+      }
+      .drop::after {
+        top: 25px;
+        left: 50px;
+        width: 10px;
+        height: 10px;
+      }
+      ion-icon {
+        font-size: 5em;
+        color: #444;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="drop">
+      <ion-icon name="logo-apple"></ion-icon>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+  </body>
+</html>

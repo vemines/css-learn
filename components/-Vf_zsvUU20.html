@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hover Button</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: verdana;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      a {
+        position: relative;
+        font-size: 26px;
+        font-weight: 500;
+        color: #262626;
+        padding: 10px 30px;
+        border: 2px solid #262626;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        transition: 0.5s;
+        overflow: hidden;
+      }
+      a:before,
+      a:after,
+      span:before,
+      span:after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 25%;
+        background: #262626;
+        z-index: -1;
+        transition: 0.5s;
+      }
+      a:before {
+        top: 0;
+        left: -26%;
+      }
+      a:after {
+        top: 0;
+        right: -26%;
+      }
+      span:before {
+        bottom: -100%;
+        left: 25%;
+      }
+      span:after {
+        top: -100%;
+        left: 50%;
+      }
+      a:hover::before {
+        top: 0;
+        left: 0;
+      }
+      a:hover::after {
+        top: 0;
+        right: 0;
+      }
+      a:hover span::before {
+        bottom: 0;
+      }
+      a:hover span::after {
+        top: 0;
+      }
+      a:hover {
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#"><span>Button</span></a>
+  </body>
+</html>
