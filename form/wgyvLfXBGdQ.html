@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', serif;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #03080a;
+      }
+      .container {
+        width: 80%;
+        padding: 20px;
+      }
+      h2 {
+        width: 100%;
+        color: #45f3ff;
+        font-size: 36px;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      .row {
+        position: relative;
+
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: repeat(autofit, minmax(300px, 1fr));
+      }
+      .col {
+        position: relative;
+        width: 100%;
+        padding: 0 10px;
+        margin: 30px 0 10px;
+        transition: 0.5s;
+      }
+      .inputBox {
+        position: relative;
+        width: 100%;
+        height: 40px;
+      }
+      input[type='text'],
+      textarea {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        box-shadow: none;
+        border: none;
+        outline: none;
+        font-size: 18px;
+        padding: 5px 10px;
+        z-index: 1;
+        color: #000;
+      }
+      .text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        line-height: 40px;
+        font-size: 18px;
+        padding: 0 10px;
+        display: block;
+        transition: 0.5s;
+        pointer-events: none;
+        color: #45f3ff;
+      }
+      input[type='text']:focus + .text,
+      input[type='text']:valid + .text {
+        top: -35px;
+        left: -10px;
+      }
+      .line {
+        position: absolute;
+        bottom: 0;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: #45f3ff;
+        transition: 0.5s;
+        border-radius: 2px;
+        pointer-events: none;
+      }
+      input[type='text']:focus ~ .line,
+      input[type='text']:valid ~ .line {
+        height: 100%;
+      }
+      textarea:focus + .text,
+      textarea:valid + .text {
+        top: -35px;
+        left: -10px;
+      }
+      .inputBox.textarea {
+        height: 100px;
+      }
+      textarea:focus ~ .line,
+      textarea:valid ~ .line {
+        height: 100%;
+      }
+      input[type='submit'] {
+        border: none;
+        padding: 7px 35px;
+        cursor: pointer;
+        outline: none;
+        background: #45f3ff;
+        color: #000;
+        font-size: 18px;
+        border-radius: 2px;
+        margin: 36px 0px 0px 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Contact Us</h2>
+      <div class="row">
+        <div class="col">
+          <div class="inputBox">
+            <input type="text" required="required" />
+            <span class="text">Full Name</span>
+            <span class="line"></span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="inputBox">
+            <input type="text" required="required" />
+            <span class="text">Email</span>
+            <span class="line"></span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="inputBox">
+            <input type="text" required="required" />
+            <span class="text">Mobile</span>
+            <span class="line"></span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="inputBox textarea">
+            <textarea type="text" required="required"></textarea>
+            <span class="text">Type your message Here...</span>
+            <span class="line"></span>
+          </div>
+        </div>
+      </div>
+      <input type="submit" value="Send" />
+    </div>
+  </body>
+</html>

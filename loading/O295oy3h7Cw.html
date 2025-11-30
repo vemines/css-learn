@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spinning Wheel Animate</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      .loader {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        background: #000;
+        border-radius: 50%;
+        overflow: hidden;
+        animation: animate 2s linear infinite;
+      }
+      @keyframes animate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      span {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #f00;
+        border-radius: 50%;
+        left: 50%;
+        transform-origin: left;
+      }
+      span:nth-child(1) {
+        background: #fea503;
+      }
+      span:nth-child(2) {
+        background: #ffd203;
+        transform: rotate(60deg);
+        z-index: 2;
+      }
+      span:nth-child(3) {
+        background: #54cd28;
+        transform: rotate(120deg);
+        z-index: 3;
+      }
+      span:nth-child(4) {
+        background: #129cf5;
+        transform: rotate(180deg);
+        z-index: 4;
+      }
+      span:nth-child(5) {
+        background: #bb5ed3;
+        transform: rotate(240deg);
+        z-index: 5;
+      }
+      span:nth-child(6) {
+        background: #ff4f45;
+        transform: rotate(300deg);
+        z-index: 6;
+        overflow: hidden;
+      }
+      span:nth-child(6)::before {
+        content: '';
+        position: absolute;
+        top: 135px;
+        left: -216px;
+        width: 100%;
+        height: 100%;
+        background: #ffd203;
+        border-radius: 50%;
+        z-index: 2;
+      }
+      span:nth-child(6)::after {
+        content: '';
+        position: absolute;
+        top: 126px;
+        left: -69px;
+        width: 100%;
+        height: 100%;
+        background: #fea503;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </body>
+</html>

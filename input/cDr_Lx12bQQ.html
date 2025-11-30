@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Generate</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: consolas;
+      }
+      .btn {
+        background: none;
+        color: #111;
+        padding: 15px 50px;
+        font-size: 1em;
+        margin: 20px auto;
+        outline: none;
+        display: block;
+        border: 3px solid #111;
+        cursor: pointer;
+        font-size: 30px;
+        font-weight: 500;
+        text-align: center;
+        border-radius: 8px;
+      }
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .box {
+        width: 20%;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #fff;
+        color: #fff;
+        font-size: 2em;
+        font-weight: 500;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn" onclick="addColor()">Generate</button>
+    <div class="container"></div>
+    <script>
+      for (let i = 1; i <= 100; i++) {
+        const box = document.createElement('div');
+        box.classList.add('box');
+        document.querySelector('.container').appendChild(box);
+      }
+      const btn = document.querySelector('.btn');
+      const colorsBox = document.querySelectorAll('.box');
+
+      function randomHexColor() {
+        var chars = '0123456789abcdef';
+        var colorLength = 6;
+        var color = '';
+        for (var i = 0; i < colorLength; i++) {
+          var randomColor = Math.floor(Math.random() * chars.length);
+          color += chars.substring(randomColor, randomColor + 1);
+        }
+        return '#' + color;
+      }
+
+      function addColor() {
+        colorsBox.forEach((e) => {
+          var newColor = randomHexColor();
+          e.style.backgroundColor = newColor;
+          e.innerHTML = newColor;
+        });
+      }
+
+      (() => {
+        addColor();
+      })();
+    </script>
+  </body>
+</html>

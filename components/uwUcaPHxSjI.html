@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hover Button</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #001f2d;
+      }
+      a {
+        position: relative;
+        padding: 20px 40px;
+        background: #0093d6;
+        text-decoration: none;
+        color: #fff;
+        font-size: 28px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        border: 2px solid #000b10;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      a::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: #000b10;
+        transform: scaleX(0);
+        transition: 0s;
+      }
+      a:hover::before {
+        transform: scaleX(1);
+        transition: 1s;
+        transition-property: transform, background;
+        transition-delay: 0s, 0.5s;
+        background: #0093d6;
+      }
+      a::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 20px 40px;
+        transition: 0s;
+      }
+      a:hover::after {
+        top: 0;
+        transition: 0.5s;
+        transition-delay: 0.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#" data-text="Button">Button</a>
+  </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shooting Effect</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        overflow: hidden;
+      }
+      section {
+        position: relative;
+
+        width: 100%;
+
+        height: 100vh;
+
+        background: url(../assets/bg1.png);
+        background-size: cover;
+        background-position: center;
+        cursor: url('../assets/aim.png'), pointer;
+      }
+      section:active {
+        cursor: url('../assets/aim_red.png'), pointer;
+      }
+      .bullet {
+        position: absolute;
+
+        width: 40px;
+
+        height: 40px;
+
+        background: url(../assets/hole.png);
+        pointer-events: none;
+        transform: translate(30px, 30px);
+        z-index: 100;
+      }
+      .spray {
+        position: absolute;
+        display: inline-block;
+
+        width: 600px;
+        height: 400px;
+
+        z-index: 10;
+        pointer-events: none;
+
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        transform: translate(-50%, -50%);
+
+        animation: fadeOut 4s linear forwards;
+      }
+
+      @keyframes fadeOut {
+        0%,
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <audio id="audio" src="../assets/shot.wav" autostart="false"></audio>
+    </section>
+    <script>
+      document.addEventListener('click', function (e) {
+        let body = document.querySelector('body');
+        let bullet = document.createElement('span');
+        bullet.classList.add('bullet');
+        let x = e.offsetX;
+        let y = e.offsetY;
+        bullet.style.left = x + 'px';
+        bullet.style.top = y + 'px';
+        body.appendChild(bullet);
+
+        let sound = document.getElementById('audio');
+        // sound.play();
+
+        let images = [
+          'url("../assets/rainbow-spray-1.png")',
+          'url("../assets/rainbow-spray-2.png")',
+        ];
+
+        let sprayImage = images[Math.floor(Math.random() * images.length)];
+
+        let spray = document.createElement('span');
+        spray.classList.add('spray');
+
+        spray.style.backgroundImage = sprayImage;
+        spray.style.left = x + Math.random() * 100 + 'px';
+        spray.style.top = y + Math.random() * 100 + 'px';
+
+        body.appendChild(spray);
+
+        setTimeout(() => {
+          bullet.remove();
+          spray.remove();
+        }, 3000);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hexagon Background Image</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #ff0;
+        background: url(../assets/bg2-blur.jpg);
+      }
+      .hexagon {
+        position: absolute;
+        transform: rotate(120deg);
+        width: 400px;
+        height: 275px;
+        overflow: hidden;
+        border-radius: 50%;
+      }
+      .inner {
+        width: 100%;
+        height: 100%;
+        transform: rotate(-60deg);
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      .inside {
+        width: 100%;
+        height: 100%;
+        transform: rotate(-60deg);
+        border-radius: 50%;
+        background: url(../assets/sqr-avatar3.jpg);
+        background-size: contain;
+        background-position: center;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hexagon">
+      <div class="inner">
+        <div class="inside"></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Waving Text</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: monospace;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      .wave {
+        font-size: 4em;
+      }
+      .char {
+        display: inline-block;
+        animation: animate 2s ease-in-out infinite;
+        animation-delay: calc(-0.05s * var(--char-index));
+      }
+      @keyframes animate {
+        0%,
+        100% {
+          transform: translateY(-2em) rotate(-25deg);
+        }
+        50% {
+          transform: translateY(2em) rotate(25deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wave" data-splitting>Lorem ipsum dolor sit amet consectetur adipisicing.</div>
+    <script src="../assets/js/splitting.min.js"></script>
+    <script>
+      Splitting();
+    </script>
+  </body>
+</html>

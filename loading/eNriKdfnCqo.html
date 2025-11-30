@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Split Loading</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #ffff3a;
+        font-family: verdana;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .loader {
+        position: relative;
+        width: 500px;
+        height: 120px;
+        text-align: center;
+        overflow: hidden;
+        border: 5px solid #000;
+      }
+      span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-size: 60px;
+        line-height: 120px;
+        display: inline-block;
+        text-transform: uppercase;
+      }
+      span:nth-child(1) {
+        clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+        animation: animate 4s linear infinite;
+      }
+      span:nth-child(2) {
+        clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+        animation: animate 4s reverse infinite;
+      }
+      @keyframes animate {
+        0% {
+          transform: translateX(100%);
+        }
+        40% {
+          transform: translateX(0);
+        }
+        60% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loader">
+      <span>Loading</span>
+      <span>Loading</span>
+    </div>
+  </body>
+</html>

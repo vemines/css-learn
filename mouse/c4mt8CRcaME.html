@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background Parallax Mouse Move</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: #6741ae url(../assets/bg5.png);
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+      section {
+        position: relative;
+        width: 1260px;
+        height: 760px;
+
+        /* max-width: 1260px; */
+      }
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="light">
+        <img src="../assets/light-bulb.png" />
+      </div>
+      <img src="../assets/diya1.png" class="layer" data-speed="-6" />
+      <img src="../assets/diya2.png" class="layer" data-speed="10" />
+      <img src="../assets/diya3.png" class="layer" data-speed="6" />
+      <img src="../assets/text1.png" class="layer" data-speed="-8" />
+      <img src="../assets/text2.png" />
+    </section>
+    <script>
+      document.addEventListener('mousemove', parallax);
+      function parallax(e) {
+        this.querySelectorAll('.layer').forEach((layer) => {
+          const speed = layer.getAttribute('data-speed');
+
+          // Calculate offset from center of screen
+          const x = ((window.innerWidth - e.pageX) / 200) * speed;
+          const y = ((window.innerHeight - e.pageY) / 200) * speed;
+
+          layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
+        });
+      }
+    </script>
+  </body>
+</html>

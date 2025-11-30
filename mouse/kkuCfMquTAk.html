@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filling Bottle</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: #03a9f4;
+      }
+      .container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+      }
+      .face1,
+      .face2 {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+      .face1 {
+        background: url(../assets/bottle-milk-2.png);
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      .face2 {
+        background: url(../assets/bottle-milk-1.png);
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="face1"></div>
+      <div class="face2"></div>
+    </div>
+    <script>
+      const container = document.querySelector('.container');
+      const face2 = document.querySelector('.face2');
+
+      container.addEventListener('mousemove', function (e) {
+        const height = container.offsetHeight;
+        const bottom = height - e.clientY;
+
+        face2.style.clipPath = `inset(0 0 ${bottom}px 0)`;
+      });
+    </script>
+  </body>
+</html>

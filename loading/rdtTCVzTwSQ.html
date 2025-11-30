@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Glowing Gradient Loading Bar</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #000;
+      }
+      .loader {
+        position: relative;
+        width: 600px;
+        height: 30px;
+        background: #fff;
+        -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+      }
+      .loader::before,
+      .loader::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          90deg,
+          #fb0094,
+          #0000ff,
+          #00ff00,
+          #ffff00,
+          #fb0094,
+          #0000ff,
+          #00ff00,
+          #ffff00,
+          #fb0094
+        );
+        animation: animate 20s linear infinite;
+        background-size: 500%;
+      }
+      .loader::after {
+        filter: blur(20px);
+      }
+      @keyframes animate {
+        0% {
+          background-position: 0 0;
+        }
+        0% {
+          background-position: 500% 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loader"></div>
+  </body>
+</html>

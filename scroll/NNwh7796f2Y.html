@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Scroll Process</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      section {
+        height: 100vh;
+      }
+      .process {
+        height: 15px;
+        background: linear-gradient(
+          90deg,
+          rgba(42, 123, 155, 1) 0%,
+          rgba(87, 199, 133, 1) 50%,
+          rgba(237, 221, 83, 1) 100%
+        );
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="process"></div>
+    <section></section>
+    <section></section>
+    <section></section>
+    <script>
+      window.addEventListener('scroll', function () {
+        const scroll = window.scrollY;
+        const dh = document.documentElement.scrollHeight;
+        const wh = window.innerHeight;
+        const process = document.querySelector('.process');
+
+        const value = (scroll / (dh - wh)) * 100;
+        process.style.width = value + '%';
+      });
+    </script>
+  </body>
+</html>

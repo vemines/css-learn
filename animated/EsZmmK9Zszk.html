@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wave Animate</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: #333;
+      }
+      footer {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        background: #66a3ff;
+      }
+      .wave {
+        position: absolute;
+        top: -100px;
+        width: 100%;
+        height: 100px;
+        background: url(../assets/wave.png);
+        background-size: 1000px 100px;
+      }
+      #wave1 {
+        opacity: 1;
+        animation: animate 4s linear infinite;
+        z-index: 3;
+      }
+      #wave2 {
+        opacity: 0.2;
+        animation: animate2 4s linear infinite;
+        z-index: 1;
+      }
+      #wave3 {
+        opacity: 0.2;
+        animation: animate 3s linear infinite;
+        z-index: 2;
+      }
+      #wave4 {
+        opacity: 0.7;
+        animation: animate2 3s linear infinite;
+        z-index: 2;
+      }
+      @keyframes animate {
+        0% {
+          background-position: 1000px;
+        }
+        100% {
+          background-position: 0;
+        }
+      }
+      @keyframes animate2 {
+        0% {
+          background-position: 0;
+        }
+        100% {
+          background-position: 1000px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <footer class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
+    </footer>
+  </body>
+</html>

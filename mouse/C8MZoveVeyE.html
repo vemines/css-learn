@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Shredder On Click</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #363a3b;
+        overflow: hidden;
+      }
+      .container {
+        position: relative;
+        display: flex;
+        gap: 350px;
+      }
+      .box {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        cursor: pointer;
+      }
+      .box span {
+        position: absolute;
+        width: 300px;
+        height: 2px;
+        background: #fff;
+        pointer-events: none;
+        transition: 0.5s ease-in-out;
+        background: var(--img);
+        background-size: 300px;
+      }
+      .box.active span {
+        transform: translateX(var(--x)) rotate(var(--r));
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box" style="--img: url(../assets/sqr-avatar2.jpg)"></div>
+      <div class="box" style="--img: url(../assets/sqr-avatar3.jpg)"></div>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        let boxes = document.querySelectorAll('.box');
+        boxes.forEach(function (box) {
+          let spans = [];
+          for (let i = 0; i < 200; i++) {
+            let span = document.createElement('span');
+            span.style.top = `${i * 1.5}px`;
+            span.style.backgroundPositionY = `${i * -1.5}px`;
+            span.style.transitionDelay = Math.random() * 1.5 + 's';
+            spans.push(span);
+            box.appendChild(span);
+          }
+
+          box.addEventListener('click', function () {
+            box.classList.toggle('active');
+            spans.forEach(function (span) {
+              span.style.setProperty('--x', Math.floor(Math.random() * 400 - 200) + 'px');
+              span.style.setProperty('--r', Math.floor(Math.random() * 360) + 'deg');
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
